@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <title>Neuseeland Work & Travel – Leo 2026/27</title>
+  <style>
+    :root {
+      --bg: #f0f4f8;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-secondary: #64748b;
+      --border: #e2e8f0;
+      --accent: #3b82f6;
+    }
+    body.dark-mode {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #e2e8f0;
+      --text-secondary: #94a3b8;
+      --border: #334155;
+      --accent: #60a5fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg); color: var(--text);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+    /* LOGIN */
+    .login-screen { position: fixed; top:0; left:0; right:0; bottom:0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; z-index: 9999; }
+    .login-box { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); text-align: center; width: 90%; max-width: 360px; }
+    .login-box h1 { margin: 0 0 8px 0; font-size: 26px; color: #1e293b; }
+    .login-box p { color: #64748b; margin: 0 0 20px 0; }
+    .login-box input { width: 100%; padding: 14px; margin: 8px 0; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 16px; }
+    .login-box button { width: 100%; padding: 14px; margin-top: 16px; background: #667eea; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; }
+    .login-box button:active { background: #764ba2; }
+    /* HEADER */
+    header { background: var(--card-bg); border-bottom: 1px solid var(--border); padding: 14px 16px; }
+    .header-content { max-width: 760px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .header-left h1 { margin: 0; font-size: 18px; }
+    .header-left .sub { font-size: 12px; color: var(--text-secondary); }
+    .header-right { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+    .hbtn { background: var(--accent); color: white; border: none; border-radius: 8px; padding: 8px 10px; cursor: pointer; font-size: 13px; }
+    .hbtn.secondary { background: var(--bg); color: var(--text); border: 1px solid var(--border); }
+    .hbtn.drive { background: #16a34a; }
+    /* STATS */
+    .stats { max-width: 760px; margin: 10px auto 0; padding: 0 16px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .stat { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 8px; text-align: center; }
+    .stat .num { font-size: 18px; font-weight: bold; color: var(--accent); }
+    .stat .lbl { font-size: 10px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: .5px; }
+    /* SEARCH */
+    .searchbar { max-width: 760px; margin: 12px auto 0; padding: 0 16px; }
+    .searchbar input { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 10px; font-size: 15px; background: var(--card-bg); color: var(--text); }
+    /* QUICKBAR */
+    .quick-bar { max-width: 760px; margin: 12px auto; padding: 0 16px; display: flex; gap: 8px; overflow-x: auto; flex-wrap: wrap; justify-content: center; }
+    .quick-bar button { width: 46px; height: 46px; border-radius: 50%; border: 2px solid var(--border); background: var(--card-bg); font-size: 20px; cursor: pointer; transition: transform .15s; }
+    .quick-bar button:active { transform: scale(1.1); }
+    .quick-bar button.active { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent); }
+    .quick-bar button.done { border-color: #16a34a; }
+    /* MAIN */
+    main { max-width: 760px; margin: 0 auto; padding: 8px 16px 60px; }
+    .station-card { background: var(--card-bg); border-radius: 16px; overflow: hidden; margin-bottom: 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); border: 1px solid var(--border); }
+    .station-header { padding: 22px 20px; color: white; position: relative; }
+    .station-title { font-size: 26px; margin: 0 0 4px 0; font-weight: 800; }
+    .station-subtitle { font-size: 14px; opacity: 0.92; margin: 0; }
+    .done-badge { position: absolute; top: 16px; right: 16px; background: rgba(255,255,255,.25); padding: 4px 10px; border-radius: 20px; font-size: 12px; }
+    .station-body { padding: 20px; }
+    .info-row { display: flex; justify-content: space-between; gap: 12px; margin: 8px 0; font-size: 14px; }
+    .info-row strong { color: var(--text-secondary); font-weight: 600; }
+    .route-box { background: linear-gradient(135deg, rgba(59,130,246,.12), rgba(59,130,246,.04)); border: 1px solid var(--accent); border-radius: 10px; padding: 12px; margin: 12px 0; }
+    .route-box .rt-title { font-weight: 700; font-size: 13px; margin-bottom: 4px; }
+    .route-btn { display: inline-block; margin-top: 8px; background: var(--accent); color: #fff; text-decoration: none; padding: 8px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; }
+    .warning-banner { background: #fee2e2; border-left: 4px solid #ef4444; padding: 12px; margin: 12px 0; border-radius: 6px; color: #7f1d1d; font-size: 14px; }
+    .timezone-banner { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px; margin: 12px 0; border-radius: 6px; color: #78350f; font-size: 14px; }
+    .weather-box { background: var(--bg); padding: 14px; border-radius: 10px; margin: 12px 0; }
+    .weather-top { display: flex; align-items: center; gap: 12px; }
+    .weather-temp { font-size: 28px; font-weight: 800; }
+    .weather-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; font-size: 13px; }
+    .weather-tip { font-size: 13px; color: var(--text-secondary); margin-top: 8px; }
+    .collapsible { background: var(--bg); padding: 12px 14px; margin: 10px 0 0; border-radius: 10px; cursor: pointer; user-select: none; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 14px; }
+    .collapsible:after { content: '▼'; font-size: 10px; color: var(--text-secondary); transition: transform .2s; }
+    .collapsible.open:after { transform: rotate(180deg); }
+    .collapsible.open + .collapsible-content { display: block; }
+    .collapsible-content { display: none; padding: 12px; background: var(--bg); border-radius: 0 0 10px 10px; margin-top: -4px; }
+    .booking-item, .highlight-item, .doc-item { background: var(--card-bg); border: 1px solid var(--border); padding: 12px; margin: 8px 0; border-radius: 8px; }
+    .booking-title, .highlight-name { font-weight: 700; font-size: 14px; }
+    .booking-detail { font-size: 12px; color: var(--text-secondary); margin: 3px 0; font-family: monospace; }
+    .highlight-desc { font-size: 13px; margin: 4px 0; color: var(--text-secondary); }
+    .chip-link { display: inline-block; margin: 8px 6px 0 0; padding: 6px 12px; background: var(--accent); color: white; text-decoration: none; border-radius: 6px; font-size: 12px; }
+    .chip-link.nav { background: #16a34a; }
+    textarea.notes { width: 100%; min-height: 80px; padding: 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--card-bg); color: var(--text); font-family: inherit; font-size: 14px; resize: vertical; }
+    .notes-saved { font-size: 12px; color: #16a34a; margin-top: 4px; height: 16px; }
+    /* Tagebuch */
+    .diary-upload { margin-top: 10px; text-align: center; background: var(--accent); color: #fff; padding: 12px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; }
+    .diary-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 8px; margin-top: 10px; }
+    .diary-thumb { position: relative; }
+    .diary-thumb img { width: 100%; height: 90px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 1px solid var(--border); display: block; }
+    .diary-del { position: absolute; top: 5px; right: 5px; z-index: 3; background: #dc2626; color: #fff; border: 1.5px solid #fff; border-radius: 8px; font-size: 15px; line-height: 1; padding: 5px 8px; cursor: pointer; box-shadow: 0 1px 4px rgba(0,0,0,.45); }
+    .diary-cap { position: absolute; left: 0; right: 0; bottom: 0; background: linear-gradient(transparent, rgba(0,0,0,.75)); color: #fff; font-size: 10px; line-height: 1.2; padding: 10px 5px 4px; border-radius: 0 0 8px 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    a.diary-cap { display: block; cursor: pointer; text-decoration: none; }
+    a.diary-cap:hover { background: linear-gradient(transparent, rgba(22,101,52,.9)); }
+    /* Tagebuch – Tage */
+    .diary-day { border: 1px solid var(--border); border-radius: 10px; padding: 12px; margin-bottom: 12px; background: var(--bg); }
+    .diary-day-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+    .diary-day-title { font-weight: 700; font-size: 15px; }
+    .diary-day-del { background: transparent; color: #dc2626; border: 1px solid #dc2626; border-radius: 6px; font-size: 12px; padding: 4px 8px; cursor: pointer; }
+    .diary-day-add { width: 100%; margin-top: 2px; padding: 11px; border: 1.5px dashed var(--accent); background: transparent; color: var(--accent); border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; }
+    .diary-day-add:hover { background: rgba(59,130,246,.08); }
+    /* TOAST */
+    .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%) translateY(20px); background: #16a34a; color: #fff; padding: 12px 18px; border-radius: 10px; font-size: 14px; font-weight: 600; box-shadow: 0 6px 20px rgba(0,0,0,.25); opacity: 0; transition: all .3s; z-index: 9999; max-width: 90%; text-align: center; }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    /* DROPZONE */
+    .dropzone { border: 2px dashed var(--border); border-radius: 12px; padding: 24px; text-align: center; transition: all .2s; cursor: pointer; background: var(--bg); }
+    .dropzone.active { border-color: var(--accent); background: rgba(59,130,246,.08); }
+    .dropzone .dz-icon { font-size: 32px; }
+    .dropzone .dz-main { font-weight: 700; margin: 8px 0 2px; }
+    .dropzone .dz-sub { font-size: 12px; color: var(--text-secondary); }
+    .doc-item { display: flex; align-items: center; gap: 10px; }
+    .doc-cat { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 12px; background: var(--accent); color: #fff; }
+    .doc-meta { flex: 1; min-width: 0; }
+    .doc-name { font-size: 13px; font-weight: 600; word-break: break-word; }
+    .doc-sub { font-size: 11px; color: var(--text-secondary); }
+    .doc-move { margin-top: 6px; width: 100%; padding: 6px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--text); font-size: 12px; }
+    .icon-btn { background: none; border: none; cursor: pointer; font-size: 16px; padding: 4px; color: var(--text-secondary); }
+    /* NAV BUTTONS */
+    .nav-buttons { display: flex; gap: 8px; margin-top: 20px; }
+    .nav-buttons button { flex: 1; padding: 12px; background: var(--accent); color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: 700; font-size: 14px; }
+    .nav-buttons button:active { opacity: .85; }
+    .markdone { width: 100%; margin-top: 10px; padding: 12px; border: none; border-radius: 10px; cursor: pointer; font-weight: 700; font-size: 14px; }
+    .markdone.todo { background: #16a34a; color: #fff; }
+    .markdone.isdone { background: var(--bg); color: var(--text-secondary); border: 1px solid var(--border); }
+    /* MODAL */
+    .modal-overlay { position: fixed; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,.5); display: none; align-items: flex-end; justify-content: center; z-index: 5000; }
+    .modal-overlay.open { display: flex; }
+    .modal { background: var(--card-bg); width: 100%; max-width: 760px; border-radius: 16px 16px 0 0; padding: 20px; max-height: 85vh; overflow-y: auto; }
+    .modal h2 { margin: 0 0 16px; font-size: 20px; }
+    .modal .close-x { float: right; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--text-secondary); }
+    .conv-row { display: flex; gap: 10px; align-items: center; margin: 12px 0; }
+    .conv-row input { flex: 1; padding: 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 18px; background: var(--card-bg); color: var(--text); }
+    .conv-row .cur { font-weight: 700; width: 50px; }
+    .conv-row.units { gap: 6px; }
+    .conv-row.units input { padding: 10px; font-size: 16px; min-width: 0; }
+    .conv-row.units .cur { width: 34px; font-size: 13px; text-align: center; }
+    .rate-info { font-size: 12px; color: var(--text-secondary); text-align: center; margin-top: 8px; }
+    .swap-btn { background: var(--accent); color: #fff; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 18px; cursor: pointer; display: block; margin: 0 auto; }
+    .footer { text-align: center; color: var(--text-secondary); font-size: 12px; padding: 20px; }
+    /* Dokument-Viewer */
+    .doc-modal { padding: 0; display: flex; flex-direction: column; max-height: 90vh; }
+    .doc-modal-head { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: var(--card-bg); border-bottom: 1px solid var(--border); }
+    .doc-modal-title { flex: 1; font-weight: 700; font-size: 14px; word-break: break-word; }
+    .doc-close-btn { background: #dc2626; color: #fff; border: none; border-radius: 8px; padding: 8px 12px; font-size: 14px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+    .doc-modal-body { flex: 1; overflow: auto; padding: 12px 14px; }
+    .doc-modal-body img { max-width: 100%; max-height: 72vh; object-fit: contain; display: block; margin: 0 auto; border-radius: 8px; }
+    .doc-modal-body iframe { width: 100%; height: 62vh; border: 1px solid var(--border); border-radius: 8px; }
+    .doc-modal-foot { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 14px; border-top: 1px solid var(--border); background: var(--card-bg); }
+    .doc-action { flex: 1; min-width: 130px; text-align: center; background: var(--accent); color: #fff; text-decoration: none; padding: 12px; border-radius: 8px; font-size: 14px; font-weight: 600; border: none; cursor: pointer; }
+    .doc-action.secondary { background: var(--bg); color: var(--text); border: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginScreen" class="login-screen">
+  <div class="login-box">
+    <h1>🥝 Neuseeland – Leo</h1>
+    <p>Bitte Passwort eingeben</p>
+    <input type="password" id="passwordInput" placeholder="Passwort" onkeypress="if(event.key==='Enter') doLogin()">
+    <button onclick="doLogin()">Einloggen</button>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app" style="display:none;">
+  <header>
+    <div class="header-content">
+      <div class="header-left">
+        <h1>🥝 Neuseeland · Leo</h1>
+        <div class="sub" id="countdown"></div>
+        <div class="sub" id="homeclock" style="margin-top:2px"></div>
+      </div>
+      <div class="header-right">
+        <button class="hbtn" onclick="openAllDocs()">📎 Dokumente</button>
+        <button class="hbtn" onclick="openAddStop()">➕ Stopp</button>
+        <button class="hbtn" onclick="openConverter()">💱 Währung</button>
+        <button class="hbtn" style="background:#16a34a" onclick="openWT()">🎒 W&amp;T Infos</button>
+        <button class="hbtn" style="background:#dc2626" onclick="openEmergency()">🆘 Notfall</button>
+        <button class="hbtn drive" onclick="openDrive()">📁 Drive</button>
+        <button class="hbtn secondary" onclick="setDrive()" title="Drive-Ordner festlegen">⚙️</button>
+        <button class="hbtn secondary" onclick="toggleDarkMode()" id="darkBtn">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="stats" id="stats"></div>
+  <div class="searchbar"><input type="text" id="searchInput" placeholder="🔍 Suche Stationen, Hotels, Highlights..." oninput="doSearch()"></div>
+  <div class="quick-bar" id="quickBar"></div>
+  <main id="mainContent"></main>
+  <div class="footer">🌄 Gute Reise! · Westcoast Roadtrip Planner 2026</div>
+</div>
+
+<!-- WÄHRUNGSRECHNER MODAL -->
+<div class="modal-overlay" id="convModal" onclick="if(event.target===this)closeModal('convModal')">
+  <div class="modal">
+    <button class="close-x" onclick="closeModal('convModal')">×</button>
+    <h2>💱 Währungsrechner</h2>
+    <div class="conv-row"><input type="number" id="eurInput" placeholder="0" oninput="convFromEur()"><span class="cur">EUR €</span></div>
+    <button class="swap-btn" onclick="swapConv()">⇅</button>
+    <div class="conv-row"><input type="number" id="usdInput" placeholder="0" oninput="convFromUsd()"><span class="cur">NZD $</span></div>
+    <div class="rate-info" id="rateInfo">Kurs wird geladen...</div>
+
+    <h2 style="margin-top:22px">📏 Einheiten (US ↔ metrisch)</h2>
+    <div class="conv-row units"><input type="number" placeholder="0" id="u_mi" oninput="uconv('u_mi','u_km',1.609344,'a')"><span class="cur">mi</span><input type="number" placeholder="0" id="u_km" oninput="uconv('u_mi','u_km',1.609344,'b')"><span class="cur">km</span></div>
+    <div class="conv-row units"><input type="number" placeholder="0" id="u_ft" oninput="uconv('u_ft','u_m',0.3048,'a')"><span class="cur">ft</span><input type="number" placeholder="0" id="u_m" oninput="uconv('u_ft','u_m',0.3048,'b')"><span class="cur">m</span></div>
+    <div class="conv-row units"><input type="number" placeholder="0" id="u_in" oninput="uconv('u_in','u_cm',2.54,'a')"><span class="cur">inch</span><input type="number" placeholder="0" id="u_cm" oninput="uconv('u_in','u_cm',2.54,'b')"><span class="cur">cm</span></div>
+    <div class="conv-row units"><input type="number" placeholder="0" id="u_lb" oninput="uconv('u_lb','u_kg',0.45359237,'a')"><span class="cur">lb</span><input type="number" placeholder="0" id="u_kg" oninput="uconv('u_lb','u_kg',0.45359237,'b')"><span class="cur">kg</span></div>
+    <div class="conv-row units"><input type="number" placeholder="0" id="u_oz" oninput="uconv('u_oz','u_g',28.349523125,'a')"><span class="cur">oz</span><input type="number" placeholder="0" id="u_g" oninput="uconv('u_oz','u_g',28.349523125,'b')"><span class="cur">g</span></div>
+    <div class="conv-row units"><input type="number" placeholder="0" id="u_gal" oninput="uconv('u_gal','u_l',3.785411784,'a')"><span class="cur">gal</span><input type="number" placeholder="0" id="u_l" oninput="uconv('u_gal','u_l',3.785411784,'b')"><span class="cur">L</span></div>
+    <div class="conv-row units"><input type="number" placeholder="0" id="u_floz" oninput="uconv('u_floz','u_ml',29.5735295625,'a')"><span class="cur">fl oz</span><input type="number" placeholder="0" id="u_ml" oninput="uconv('u_floz','u_ml',29.5735295625,'b')"><span class="cur">ml</span></div>
+    <div class="conv-row units"><input type="number" placeholder="0" id="u_f" oninput="tconv('f')"><span class="cur">°F</span><input type="number" placeholder="0" id="u_c" oninput="tconv('c')"><span class="cur">°C</span></div>
+    <div class="rate-info">US-Gallone &amp; fl oz (nicht die brit. Größen). Werte auf 4 Stellen gerundet.</div>
+  </div>
+</div>
+
+<!-- NOTFALL MODAL -->
+<div class="modal-overlay" id="emModal" onclick="if(event.target===this)closeModal('emModal')">
+  <div class="modal">
+    <button class="close-x" onclick="closeModal('emModal')">×</button>
+    <h2>🆘 Notfall & wichtige Nummern (Neuseeland)</h2>
+    <div class="booking-item"><div class="booking-title">🚑 Notruf NZ (Polizei/Feuer/Rettung)</div><a class="chip-link" href="tel:111">111 anrufen</a></div>
+    <div class="booking-item"><div class="booking-title">☎️ Healthline (Gesundheit, 24/7, gratis)</div><a class="chip-link" href="tel:0800611116">0800 611 116</a></div>
+    <div class="booking-item"><div class="booking-title">🚔 Polizei (nicht dringend)</div><a class="chip-link" href="tel:105">105</a></div>
+    <div class="booking-item"><div class="booking-title">🇩🇪 Deutsche Botschaft Wellington</div><a class="chip-link" href="tel:+6444736063">+64 4 473 6063</a></div>
+    <div class="booking-item"><div class="booking-title">🚗 AA Pannenhilfe (Automobile Association)</div><a class="chip-link" href="tel:0800500222">0800 500 222</a></div>
+    <div class="booking-item"><div class="booking-title">⛰️ Bergrettung / im Notfall</div><div class="booking-detail">Immer 111 wählen. Vor Wanderungen Route hinterlegen: adventuresmart.nz</div></div>
+    <div class="booking-item"><div class="booking-title">🛡️ Versicherungs-Hotline</div><div class="booking-detail">Nummer der eigenen Auslands-/W&T-Versicherung notieren & griffbereit halten.</div></div>
+  </div>
+</div>
+
+<!-- WORK & TRAVEL MODAL -->
+<div class="modal-overlay" id="wtModal" onclick="if(event.target===this)closeModal('wtModal')">
+  <div class="modal">
+    <button class="close-x" onclick="closeModal('wtModal')">×</button>
+    <h2>🎒 Work &amp; Travel – Startpaket</h2>
+    <div class="booking-item"><div class="booking-title">🛂 Working Holiday Visa</div><div class="booking-detail">Online bei Immigration NZ beantragen (18–30 J.). Vor Abflug prüfen!</div><a class="chip-link" target="_blank" rel="noopener" href="https://www.immigration.govt.nz/new-zealand-visas/options/work/working-holiday-visa">immigration.govt.nz</a></div>
+    <div class="booking-item"><div class="booking-title">💰 Nachweis Mittel + Rückflug</div><div class="booking-detail">Ca. NZ$4.200 Nachweis + Rückflug/ausreichende Mittel. Auslands-/W&T-Versicherung Pflicht.</div></div>
+    <div class="booking-item"><div class="booking-title">🧾 IRD-Nummer (Steuer)</div><div class="booking-detail">Nach Ankunft beantragen – brauchst du für jeden Job (sonst hoher Steuersatz).</div><a class="chip-link" target="_blank" rel="noopener" href="https://www.ird.govt.nz">ird.govt.nz</a></div>
+    <div class="booking-item"><div class="booking-title">🏦 Bankkonto</div><div class="booking-detail">ANZ, ASB, Westpac, BNZ oder Kiwibank. Teils schon vor Ankunft online eröffnbar.</div></div>
+    <div class="booking-item"><div class="booking-title">📱 SIM-Karte</div><div class="booking-detail">Spark, One NZ oder 2degrees. Prepaid mit Datenpaket am Flughafen/City holen.</div></div>
+    <div class="booking-item"><div class="booking-title">💵 Job & Lohn</div><div class="booking-detail">Mindestlohn ~NZ$23/h (prüfen). PAYE-Steuer wird direkt abgezogen. NZ-CV kurz & mit Referenzen.</div></div>
+    <div class="booking-item"><div class="booking-title">🍒 Saisonarbeit</div><div class="booking-detail">Obsternte: Central Otago (Kirschen Dez–Feb), Hawke's Bay & Bay of Plenty (Äpfel/Kiwi Mär–Jun), Nelson. Ski/Hospitality: Queenstown & Wanaka (Jun–Okt).</div></div>
+    <div class="booking-item"><div class="booking-title">🚗 Transport & Linksverkehr</div><div class="booking-detail">In NZ gilt LINKSVERKEHR! Führerschein + intl. Übersetzung mitführen. Fernbus: InterCity. Fähre Nord↔Süd: Interislander/Bluebridge (Wellington–Picton).</div></div>
+    <div class="booking-item"><div class="booking-title">📲 Nützliche Apps</div><div class="booking-detail">BackpackerBoard & Backpacker Deals (Jobs/Hostels), CamperMate (Stellplätze/Toiletten), MetService (Wetter), AdventureSmart (Sicherheit), Rome2Rio (Routen).</div></div>
+    <div class="booking-item"><div class="booking-title">⚠️ Wichtig</div><div class="booking-detail">Visabestimmungen & Beträge ändern sich. Immer die offiziellen Seiten (immigration.govt.nz) vor Abflug prüfen. NZ-Sonne ist extrem stark – LSF 50+!</div></div>
+  </div>
+</div>
+
+<!-- DRIVE MODAL -->
+<div class="modal-overlay" id="driveModal" onclick="if(event.target===this)closeModal('driveModal')">
+  <div class="modal">
+    <button class="close-x" onclick="closeModal('driveModal')">×</button>
+    <h2>📁 Drive-Ordner</h2>
+    <p style="font-size:13px;color:var(--text-secondary);margin-top:0">Hinterlege deine eigene Google-Drive-Ordner-URL. Sie wird nur in deinem Browser gespeichert — so kann jeder seinen eigenen Ordner nutzen.</p>
+    <input type="text" id="driveInput" placeholder="https://drive.google.com/drive/folders/..." style="width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--card-bg);color:var(--text);font-size:14px">
+    <div id="driveStatus" style="font-size:12px;color:#16a34a;height:16px;margin-top:6px"></div>
+    <div style="display:flex;gap:8px;margin-top:8px">
+      <button class="hbtn" style="flex:1;padding:12px" onclick="saveDrive()">💾 Speichern</button>
+      <button class="hbtn drive" style="flex:1;padding:12px" onclick="openSavedDrive()">↗️ Ordner öffnen</button>
+    </div>
+  </div>
+</div>
+
+<!-- ALLE DOKUMENTE MODAL -->
+<div class="modal-overlay" id="allDocsModal" onclick="if(event.target===this)closeModal('allDocsModal')">
+  <div class="modal">
+    <button class="close-x" onclick="closeModal('allDocsModal')">×</button>
+    <h2 id="allDocsTitle">📎 Alle Dokumente</h2>
+    <div id="allDocsList"></div>
+  </div>
+</div>
+
+<!-- ZWISCHENSTOPP HINZUFÜGEN MODAL -->
+<div class="modal-overlay" id="addStopModal" onclick="if(event.target===this)closeModal('addStopModal')">
+  <div class="modal">
+    <button class="close-x" onclick="closeModal('addStopModal')">×</button>
+    <h2>➕ Zwischenstopp hinzufügen</h2>
+    <p style="font-size:13px;color:var(--text-secondary);margin-top:0">Für spontane Stopps unterwegs – mit eigenem Tagebuch, Notizen & Fotos. Die bestehenden Stationen bleiben unverändert.</p>
+    <input id="stopName" type="text" placeholder="Name (z.B. Aussichtspunkt am Highway 1)" style="width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--card-bg);color:var(--text);font-size:14px;margin-bottom:8px">
+    <input id="stopIcon" type="text" value="📍" placeholder="Emoji (optional)" style="width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--card-bg);color:var(--text);font-size:14px;margin-bottom:8px">
+    <label style="font-size:13px;color:var(--text-secondary)">Einfügen nach welcher Station:</label>
+    <select id="stopAfter" style="width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--card-bg);color:var(--text);font-size:14px;margin-top:4px"></select>
+    <div style="display:flex;gap:8px;margin-top:14px">
+      <button class="hbtn" style="flex:1;padding:12px" onclick="saveStop()">Hinzufügen</button>
+      <button class="hbtn secondary" style="flex:1;padding:12px" onclick="closeModal('addStopModal')">Abbrechen</button>
+    </div>
+  </div>
+</div>
+
+<!-- DOKUMENT VIEWER MODAL -->
+<div class="modal-overlay" id="docModal" onclick="if(event.target===this)closeModal('docModal')">
+  <div class="modal doc-modal">
+    <div class="doc-modal-head">
+      <span id="docTitle" class="doc-modal-title">Dokument</span>
+      <button class="doc-close-btn" onclick="closeModal('docModal')">✕ Schließen</button>
+    </div>
+    <div id="docView" class="doc-modal-body"></div>
+    <div class="doc-modal-foot">
+      <a id="docOpen" class="doc-action" target="_blank" rel="noopener">🔎 In neuem Tab öffnen</a>
+      <a id="docDownload" class="doc-action secondary" target="_blank" rel="noopener" download>⬇️ Herunterladen</a>
+      <button id="docDelete" class="doc-action" style="display:none;background:#dc2626;color:#fff">🗑️ Foto löschen</button>
+      <button class="doc-action secondary" onclick="closeModal('docModal')">Schließen</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+// ===== AUTH =====
+function hashCode(s){var h=0;for(var i=0;i<s.length;i++){h=((h<<5)-h)+s.charCodeAt(i);h|=0;}return h;}
+function doLogin(){
+  var pwd=document.getElementById('passwordInput').value;
+  if(hashCode(pwd)===-1106389789){
+    sessionStorage.setItem('nz_loggedIn','true');
+    document.getElementById('loginScreen').style.display='none';
+    document.getElementById('app').style.display='block';
+    initApp();
+  }else{
+    alert('Falsches Passwort');
+    document.getElementById('passwordInput').value='';
+  }
+}
+if(sessionStorage.getItem('nz_loggedIn')==='true'){
+  document.getElementById('loginScreen').style.display='none';
+  document.getElementById('app').style.display='block';
+}
+
+// ===== CONFIG =====
+var DRIVE_URL = 'https://drive.google.com/drive/u/0/folders/13wuRN77RFxZlqVqnKhCFWOc7YnUQ9biA';
+var TRIP_START = '2026-09-25';
+var FALLBACK_RATE = 1.80; // 1 EUR = X NZD
+var rate = FALLBACK_RATE;
+
+// ============================================================
+// ===== HIER GETEILTE DRIVE-LINKS EINTRAGEN ==================
+// Diese Links sind nach dem GitHub-Upload für ALLE sichtbar.
+// Pro Station-Nummer (0 = San Francisco Ankunft ... 11 = San Francisco Ende)
+// eine Liste mit { name: 'Anzeigename', url: 'Drive-Freigabe-Link' }.
+// WICHTIG: In Google Drive die Datei auf "Jeder mit dem Link" freigeben!
+// Stations-Nummern:
+//  0 San Francisco (Ankunft)   1 Yosemite        2 Death Valley
+//  3 Bryce Canyon              4 Page, Arizona   5 Grand Canyon
+//  6 Las Vegas                 7 San Diego       8 Los Angeles
+//  9 Santa Barbara            10 Monterey       11 San Francisco (Ende)
+var SHARED_LINKS = {
+  // Beispiele — entferne das // und setze deine echten Links ein:
+  // 4: [ { name: 'Bootstour Lake Powell', url: 'https://drive.google.com/file/d/XXXX/view' } ],
+  // 6: [ { name: 'Ticket Ed Sheeran',     url: 'https://drive.google.com/file/d/YYYY/view' } ],
+  // 0: [ { name: 'Mietwagen Enterprise',  url: 'https://drive.google.com/file/d/ZZZZ/view' } ]
+};
+// ============================================================
+
+// Fest eingebettete Dokumente (werden per Skript befüllt) — für alle sichtbar
+var SHARED_DOCS = {}; /*__SHARED_DOCS__*/
+
+// ===== STATE =====
+var current = 0;
+var darkMode = localStorage.getItem('nz_darkMode')==='true';
+var notes = JSON.parse(localStorage.getItem('nz_notes')||'{}');
+var docs = JSON.parse(localStorage.getItem('nz_docs')||'{}');
+var doneStations = JSON.parse(localStorage.getItem('nz_done')||'{}');
+var links = JSON.parse(localStorage.getItem('nz_links')||'{}');
+var diary = JSON.parse(localStorage.getItem('nz_diary')||'{}');
+// Tagebuch mit mehreren Tagen pro Station: { stationKey: [ {id, text}, ... ] }
+var diaryDays = JSON.parse(localStorage.getItem('nz_diarydays')||'{}');
+function newDayId(){ return 'd'+Date.now().toString(36)+Math.floor(Math.random()*1e6).toString(36); }
+function saveDiaryDays(){ try{ localStorage.setItem('nz_diarydays',JSON.stringify(diaryDays)); }catch(e){} }
+// Sorgt dafür, dass jede Station mind. einen Tag hat; migriert alten Einzeltext (diary) zu "Tag 1"
+function ensureDays(key){
+  if(!diaryDays[key] || !diaryDays[key].length){
+    var first={id:newDayId(), text:(diary[key]||'')};
+    diaryDays[key]=[first];
+  }
+  return diaryDays[key];
+}
+var customStops = JSON.parse(localStorage.getItem('nz_custom')||'[]'); // eigene Zwischenstopps
+var ROUTE = []; // effektive Reihenfolge aus Basis-Stationen + eigenen Zwischenstopps
+function buildRoute(){
+  var route=[];
+  for(var bi=0;bi<STOPS.length;bi++) route.push({key:bi, stop:STOPS[bi]});
+  for(var ci=0;ci<customStops.length;ci++){
+    var cs=customStops[ci];
+    var st={city:cs.name,subtitle:'📔 Eigener Zwischenstopp',icon:cs.icon||'📍',dates:'Zwischenstopp',nights:0,hotel:null,address:cs.name,routeFrom:null,arrival:null,warning:null,timezone:null,weather:null,bookings:[],highlights:[],nextDistance:null,nextTime:null,nextTo:null,_custom:true};
+    var pos=-1;
+    for(var r=0;r<route.length;r++){ if(route[r].key===cs.after){ pos=r; break; } }
+    var entry={key:cs.key, stop:st};
+    if(pos===-1) route.push(entry); else route.splice(pos+1,0,entry);
+  }
+  return route;
+}
+function refreshRoute(){ ROUTE=buildRoute(); }
+
+// ===== DATA =====
+var STOPS = [{"city": "Auckland", "subtitle": "Ankunft & Start ins Abenteuer", "dates": "Nordinsel · Ankunft (Sept)", "nights": 6, "hotel": null, "icon": "🛬", "address": "Auckland CBD, New Zealand", "routeFrom": null, "arrival": "Landung in Auckland (AKL). Erste Tage: IRD-Nummer, Bankkonto, SIM-Karte, Jobsuche & ankommen.", "warning": null, "timezone": null, "wt": "Perfekter Start-Hub: hier IRD-Nummer beantragen, Bankkonto eröffnen, SIM holen. Viele Backpacker-Hostels & Jobbörsen. Auckland hat die meisten Hospitality-/Aushilfsjobs.", "weather": {"icon": "⛅", "condition": "Subtropisch, wechselhaft", "tempHigh": 23, "tempLow": 15, "humidity": "75%", "uv": "11 (extrem)", "tip": "Ankunft im Frühling (Sept): mild & wechselhaft, Regenjacke! Sommer (Dez–Feb) warm & feucht. UV extrem – immer LSF 50+."}, "bookings": [], "highlights": [{"name": "Sky Tower", "tipIcon": "🗼", "desc": "328m – Wahrzeichen mit Rundblick über Stadt & Hafen", "bestTime": "Sonnenuntergang", "url": "https://www.skycityauckland.co.nz/sky-tower/", "urlLabel": "Info", "navAddress": "Sky Tower, Auckland"}, {"name": "Waiheke Island", "tipIcon": "🍇", "desc": "Weininsel per Fähre – Strände & Weingüter", "bestTime": "Tagesausflug", "navAddress": "Waiheke Island Ferry, Auckland"}, {"name": "Mount Eden", "tipIcon": "🌋", "desc": "Vulkankrater mit 360°-Blick über Auckland", "bestTime": "Vormittags", "navAddress": "Mount Eden, Auckland"}], "nextDistance": 230, "nextTime": "ca. 3,5 Std.", "nextTo": "Bay of Islands"}, {"city": "Bay of Islands", "subtitle": "Delfine & 144 Inseln", "dates": "Northland · Sommer top", "nights": 3, "hotel": null, "icon": "🐬", "address": "Paihia, Bay of Islands", "routeFrom": "Auckland", "warning": null, "timezone": null, "wt": "Tourismus-Region: im Sommer viele Jobs in Hostels, Bootstouren, Cafés. Schön zum Eingewöhnen, aber Löhne saisonal.", "weather": {"icon": "☀️", "condition": "Subtropisch, warm", "tempHigh": 25, "tempLow": 16, "humidity": "78%", "uv": "11 (extrem)", "tip": "Wärmste Region NZs. Ideal Nov–März zum Schwimmen/Segeln. Sonnenschutz Pflicht."}, "bookings": [], "highlights": [{"name": "Hole in the Rock", "tipIcon": "⛵", "desc": "Bootstour zu Delfinen & dem berühmten Felsentor", "bestTime": "Vormittags", "navAddress": "Hole in the Rock, Bay of Islands"}, {"name": "Waitangi Treaty Grounds", "tipIcon": "📜", "desc": "Geburtsort des modernen NZ – Māori-Geschichte", "bestTime": "Ganzer Tag", "url": "https://www.waitangi.org.nz", "urlLabel": "Info", "navAddress": "Waitangi Treaty Grounds"}, {"name": "Cape Reinga", "tipIcon": "🌊", "desc": "Nördlichster Zipfel – wo zwei Meere sich treffen", "bestTime": "Tagesausflug", "navAddress": "Cape Reinga"}], "nextDistance": 380, "nextTime": "ca. 5 Std.", "nextTo": "Coromandel"}, {"city": "Coromandel", "subtitle": "Traumstrände & Kauri-Wälder", "dates": "Nordinsel · Sommer", "nights": 3, "hotel": null, "icon": "🏖️", "address": "Whitianga, Coromandel", "routeFrom": "Bay of Islands", "warning": null, "timezone": null, "wt": "Sommer-Hotspot mit Ferienjobs (Cafés, Campingplätze). Sehr beliebt in der Hochsaison – früh nach Jobs & Unterkunft schauen.", "weather": {"icon": "☀️", "condition": "Warm, sonnig", "tempHigh": 24, "tempLow": 15, "humidity": "75%", "uv": "11 (extrem)", "tip": "Hochsaison Dez–Feb (dann voll!). Hot Water Beach am besten um Ebbe."}, "bookings": [], "highlights": [{"name": "Hot Water Beach", "tipIcon": "♨️", "desc": "Grabe dein eigenes Thermal-Loch im Sand (bei Ebbe)", "bestTime": "±2 Std. um Ebbe", "navAddress": "Hot Water Beach, Coromandel"}, {"name": "Cathedral Cove", "tipIcon": "🪨", "desc": "Ikonisches Felsentor & Bucht (kurze Wanderung)", "bestTime": "Früh morgens", "navAddress": "Cathedral Cove, Hahei"}], "nextDistance": 210, "nextTime": "ca. 3 Std.", "nextTo": "Rotorua"}, {"city": "Rotorua", "subtitle": "Geothermie & Māori-Kultur", "dates": "Nordinsel · ganzjährig", "nights": 3, "hotel": null, "icon": "♨️", "address": "Rotorua", "routeFrom": "Coromandel", "warning": null, "timezone": null, "wt": "Ganzjähriger Tourismusort → gute Chancen auf Hostel-/Attraktionsjobs. Günstige Backpacker. Achtung: es riecht nach Schwefel!", "weather": {"icon": "🌤️", "condition": "Mild, geothermisch", "tempHigh": 23, "tempLow": 12, "humidity": "78%", "uv": "10 (sehr hoch)", "tip": "Ganzjährig besuchbar. Abende kühl. Nach Regen dampfen die Geysire am schönsten."}, "bookings": [], "highlights": [{"name": "Wai-O-Tapu", "tipIcon": "🌈", "desc": "Bunte Thermalquellen & Champagne Pool", "bestTime": "Vormittags", "url": "https://www.waiotapu.co.nz", "urlLabel": "Info", "navAddress": "Wai-O-Tapu Thermal Wonderland"}, {"name": "Te Puia (Pōhutu Geysir)", "tipIcon": "⛲", "desc": "Geysir + Māori-Kulturzentrum & Haka", "bestTime": "Nachmittag", "navAddress": "Te Puia, Rotorua"}, {"name": "Redwoods Treewalk", "tipIcon": "🌲", "desc": "Hängebrücken durch Mammutbaum-Wald", "bestTime": "Abends beleuchtet", "navAddress": "Redwoods Whakarewarewa Forest"}], "nextDistance": 80, "nextTime": "ca. 1 Std.", "nextTo": "Taupō & Tongariro"}, {"city": "Taupō & Tongariro", "subtitle": "Vulkane & größter See NZs", "dates": "Nordinsel · Wandern Sommer", "nights": 3, "hotel": null, "icon": "🌋", "address": "Taupō", "routeFrom": "Rotorua", "warning": "Tongariro Alpine Crossing: Hochgebirge! Wetter schlägt schnell um – nur bei guter Vorhersage, warme Kleidung, viel Wasser.", "timezone": null, "wt": "Adventure-Tourismus & Seen-Region. Sommerjobs in Cafés/Touren. Guter Ort zum Wandern an freien Tagen.", "weather": {"icon": "⛅", "condition": "Alpin beeinflusst", "tempHigh": 22, "tempLow": 10, "humidity": "70%", "uv": "11 (extrem)", "tip": "Tongariro Crossing v.a. Nov–April machbar. Auch im Sommer oben kalt/windig – Schichten!"}, "bookings": [], "highlights": [{"name": "Tongariro Alpine Crossing", "tipIcon": "🥾", "desc": "Legendäre 19,4 km Tageswanderung über Vulkane", "bestTime": "Früh starten (Sommer)", "url": "https://www.doc.govt.nz/tongarirocrossing", "urlLabel": "DOC Info", "navAddress": "Tongariro Alpine Crossing"}, {"name": "Huka Falls", "tipIcon": "💧", "desc": "Türkisblaue tosende Wasserfälle", "bestTime": "Jederzeit", "navAddress": "Huka Falls, Taupō"}, {"name": "Lake Taupō", "tipIcon": "🚤", "desc": "Riesiger Kratersee – Māori Rock Carvings per Boot", "bestTime": "Nachmittag", "navAddress": "Lake Taupō"}], "nextDistance": 145, "nextTime": "ca. 2 Std.", "nextTo": "Napier"}, {"city": "Napier / Hawke's Bay", "subtitle": "Art Déco, Wein & Obst", "dates": "Nordinsel · Ernte Mär–Jun", "nights": 2, "hotel": null, "icon": "🍇", "address": "Napier", "routeFrom": "Taupō & Tongariro", "warning": null, "timezone": null, "wt": "TOP für Saisonarbeit! Hawke's Bay ist Obst-/Weinregion: Äpfel, Trauben, Kiwi – v.a. März–Juni viele Erntejobs. Sonnigste Region NZs.", "weather": {"icon": "☀️", "condition": "Sonnig, mediterran", "tempHigh": 25, "tempLow": 13, "humidity": "70%", "uv": "11 (extrem)", "tip": "Eine der sonnigsten & trockensten Regionen. Ernte-Saison Herbst (Mär–Mai). Ideal für Work-Phase."}, "bookings": [], "highlights": [{"name": "Art-Déco-Viertel", "tipIcon": "🏛️", "desc": "Nach 1931er Erdbeben komplett im Art-Déco-Stil", "bestTime": "Vormittags", "navAddress": "Napier Art Deco, Marine Parade"}, {"name": "Te Mata Peak", "tipIcon": "⛰️", "desc": "Aussichtsgipfel über Weinberge & Küste", "bestTime": "Sonnenuntergang", "navAddress": "Te Mata Peak, Havelock North"}, {"name": "Weingüter Hawke's Bay", "tipIcon": "🍷", "desc": "Eine der besten Weinregionen NZs", "bestTime": "Nachmittag", "navAddress": "Hawke's Bay Wineries"}], "nextDistance": 320, "nextTime": "ca. 4,5 Std.", "nextTo": "Wellington"}, {"city": "Wellington", "subtitle": "Hauptstadt & Fähre zum Süden", "dates": "Nordinsel · ganzjährig", "nights": 3, "hotel": null, "icon": "🎬", "address": "Wellington CBD", "routeFrom": "Napier / Hawke's Bay", "warning": null, "timezone": null, "wt": "Coole, kompakte Hauptstadt mit vielen Café-/Hospitality-Jobs & Kreativszene (Weta/Film). Hier startet die Fähre zur Südinsel.", "weather": {"icon": "💨", "condition": "Mild & sehr windig", "tempHigh": 20, "tempLow": 13, "humidity": "78%", "uv": "10 (sehr hoch)", "tip": "'Windy Welly' – oft kräftiger Wind. Ganzjährig mild, selten heiß. Jacke immer dabei."}, "bookings": [], "highlights": [{"name": "Te Papa Museum", "tipIcon": "🏛️", "desc": "Nationalmuseum – gratis, interaktiv, top", "bestTime": "Ganzer Tag", "url": "https://www.tepapa.govt.nz", "urlLabel": "Info", "navAddress": "Te Papa, Wellington"}, {"name": "Mount Victoria Lookout", "tipIcon": "🌆", "desc": "Panorama über Stadt & Hafen", "bestTime": "Sonnenuntergang", "navAddress": "Mount Victoria Lookout, Wellington"}, {"name": "Weta Workshop", "tipIcon": "🎬", "desc": "Herr-der-Ringe / Filmeffekte-Studio-Tour", "bestTime": "Nach Buchung", "navAddress": "Weta Workshop, Miramar"}, {"name": "Cuba Street", "tipIcon": "☕", "desc": "Hippes Viertel – Cafés, Bars, Live-Musik", "bestTime": "Abends", "navAddress": "Cuba Street, Wellington"}], "nextDistance": 0, "nextTime": "Fähre 3,5 Std. + Fahrt", "nextTo": "Marlborough & Nelson"}, {"city": "Marlborough & Nelson", "subtitle": "Abel Tasman & Sauvignon Blanc", "dates": "Südinsel · Sommer top", "nights": 4, "hotel": null, "icon": "🚤", "address": "Nelson", "routeFrom": "Wellington (per Fähre nach Picton)", "warning": null, "timezone": null, "wt": "Ankunft Südinsel per Fähre in Picton. Sonnenreichste Ecke NZs. Weinbau (Marlborough) & Obst (Nelson) → Saisonjobs. Abel Tasman zum Kajaken/Wandern.", "weather": {"icon": "☀️", "condition": "Sonnig, trocken", "tempHigh": 23, "tempLow": 12, "humidity": "70%", "uv": "11 (extrem)", "tip": "Sonnigste Region NZs. Abel Tasman ideal Nov–April. Weinlese März–April."}, "bookings": [], "highlights": [{"name": "Abel Tasman Coast Track", "tipIcon": "🛶", "desc": "Goldstrände & türkises Wasser – wandern/kajaken", "bestTime": "Sommer", "url": "https://www.doc.govt.nz/abeltasmancoasttrack", "urlLabel": "DOC Info", "navAddress": "Abel Tasman National Park"}, {"name": "Marlborough Weinregion", "tipIcon": "🍷", "desc": "Weltberühmter Sauvignon Blanc – Radtour durch Weingüter", "bestTime": "Nachmittag", "navAddress": "Marlborough Wine Region, Blenheim"}, {"name": "Split Apple Rock", "tipIcon": "🍎", "desc": "Berühmter gespaltener Felsen im Meer", "bestTime": "Vormittags", "navAddress": "Split Apple Rock, Kaiteriteri"}], "nextDistance": 240, "nextTime": "ca. 3,5 Std.", "nextTo": "Kaikōura"}, {"city": "Kaikōura", "subtitle": "Wale, Robben & Delfine", "dates": "Südinsel · ganzjährig", "nights": 2, "hotel": null, "icon": "🐋", "address": "Kaikōura", "routeFrom": "Marlborough & Nelson", "warning": null, "timezone": null, "wt": "Kleiner Wal-Beobachtungsort. Saisonjobs in Touren/Gastro. Pottwale ganzjährig vor der Küste.", "weather": {"icon": "🌤️", "condition": "Küstig, mild", "tempHigh": 20, "tempLow": 11, "humidity": "75%", "uv": "10 (sehr hoch)", "tip": "Ganzjährig Wale. See kann rau sein – bei Seekrankheit vorsorgen. Abends frisch."}, "bookings": [], "highlights": [{"name": "Whale Watching", "tipIcon": "🐳", "desc": "Pottwale ganzjährig – per Boot oder Flugzeug", "bestTime": "Vormittags (ruhigere See)", "url": "https://www.whalewatch.co.nz", "urlLabel": "Info", "navAddress": "Whale Watch Kaikoura"}, {"name": "Ohau Point Seehunde", "tipIcon": "🦭", "desc": "Robbenkolonie & (saisonal) Wasserfall mit Robbenbabys", "bestTime": "Jederzeit", "navAddress": "Ohau Point Seal Colony"}, {"name": "Kaikōura Peninsula Walk", "tipIcon": "🥾", "desc": "Küstenwanderung mit Robben & Bergblick", "bestTime": "Nachmittag", "navAddress": "Kaikoura Peninsula Walkway"}], "nextDistance": 180, "nextTime": "ca. 2,5 Std.", "nextTo": "Christchurch"}, {"city": "Christchurch", "subtitle": "Garden City der Südinsel", "dates": "Südinsel · ganzjährig", "nights": 3, "hotel": null, "icon": "🌳", "address": "Christchurch CBD", "routeFrom": "Kaikōura", "warning": null, "timezone": null, "wt": "Größte Stadt der Südinsel – nach den Erdbeben modern wiederaufgebaut. Viele Jobs (Gastro, Bau, Aushilfe) & günstiger als Auckland. Guter Basis-Hub Süden.", "weather": {"icon": "⛅", "condition": "Trocken, 4 Jahreszeiten/Tag", "tempHigh": 22, "tempLow": 12, "humidity": "70%", "uv": "11 (extrem)", "tip": "Kann heißer Nor'wester-Wind bringen. Winter (Jun–Aug) kalt & Frost. Frühling wechselhaft."}, "bookings": [], "highlights": [{"name": "Botanic Gardens", "tipIcon": "🌷", "desc": "Wunderschöner Stadtpark am Avon River", "bestTime": "Nachmittag", "navAddress": "Christchurch Botanic Gardens"}, {"name": "Cardboard Cathedral", "tipIcon": "⛪", "desc": "Nach dem Erdbeben – Übergangskathedrale", "bestTime": "Vormittags", "navAddress": "Cardboard Cathedral, Christchurch"}, {"name": "Gondola / Port Hills", "tipIcon": "🚡", "desc": "Blick über Stadt, Meer & Southern Alps", "bestTime": "Klarer Tag", "navAddress": "Christchurch Gondola"}], "nextDistance": 390, "nextTime": "ca. 5,5 Std. (Arthur's Pass)", "nextTo": "Westküste & Gletscher"}, {"city": "Franz Josef Gletscher", "subtitle": "Regenwald trifft Eis", "dates": "Westküste · ganzjährig", "nights": 2, "hotel": null, "icon": "🧊", "address": "Franz Josef Glacier", "routeFrom": "Christchurch (über Arthur's Pass)", "warning": "Gletscher nur mit geführten Touren betreten! Wetter sehr regnerisch – Heli-Touren fallen oft aus, Puffer einplanen.", "timezone": null, "wt": "Kleine Gletscherorte (Franz Josef & Fox). Saisonjobs in Lodges/Touren. Landschaft: Regenwald direkt am Gletscher – einzigartig.", "weather": {"icon": "🌧️", "condition": "Sehr regenreich", "tempHigh": 19, "tempLow": 11, "humidity": "88%", "uv": "9 (sehr hoch)", "tip": "Eine der nassesten Regionen – Regenjacke Pflicht! Für Heli-Hikes flexible Tage einplanen."}, "bookings": [], "highlights": [{"name": "Franz Josef Glacier Walk", "tipIcon": "🚶", "desc": "Talwanderung zum Gletscher-Aussichtspunkt", "bestTime": "Vormittags", "url": "https://www.doc.govt.nz/franzjosef", "urlLabel": "DOC Info", "navAddress": "Franz Josef Glacier Valley Walk"}, {"name": "Fox Glacier & Lake Matheson", "tipIcon": "🪞", "desc": "Spiegelsee mit Mt-Cook-Reflexion", "bestTime": "Windstiller Morgen", "navAddress": "Lake Matheson, Fox Glacier"}, {"name": "Hokitika Gorge", "tipIcon": "💎", "desc": "Leuchtend türkise Schlucht", "bestTime": "Tageslicht", "navAddress": "Hokitika Gorge"}], "nextDistance": 290, "nextTime": "ca. 4 Std.", "nextTo": "Wānaka"}, {"city": "Wānaka", "subtitle": "See, Berge & #ThatWanakaTree", "dates": "Südinsel · Sommer & Ski", "nights": 3, "hotel": null, "icon": "🏔️", "address": "Wānaka", "routeFrom": "Franz Josef Gletscher", "warning": null, "timezone": null, "wt": "Entspannter als Queenstown, aber ebenso schön. Sommer: Wandern/See. Winter (Jun–Okt): Skigebiete (Cardrona, Treble Cone) → Ski-Saisonjobs.", "weather": {"icon": "☀️", "condition": "Trocken, alpin", "tempHigh": 24, "tempLow": 10, "humidity": "55%", "uv": "11 (extrem)", "tip": "Sommer heiß & trocken, Nächte kühl. Winter: Schnee & Ski. UV in Höhe extrem."}, "bookings": [], "highlights": [{"name": "Roys Peak Track", "tipIcon": "🥾", "desc": "Ikonischer Foto-Aussichtspunkt über den See (steil, 16 km)", "bestTime": "Früh morgens", "url": "https://www.doc.govt.nz/royspeak", "urlLabel": "DOC Info", "navAddress": "Roys Peak Track, Wanaka"}, {"name": "That Wanaka Tree", "tipIcon": "🌳", "desc": "Der berühmteste Baum NZs im See", "bestTime": "Sonnenaufgang", "navAddress": "That Wanaka Tree"}, {"name": "Rob Roy Glacier Track", "tipIcon": "🧊", "desc": "Wanderung zu hängendem Gletscher", "bestTime": "Sommer", "navAddress": "Rob Roy Glacier Track"}], "nextDistance": 70, "nextTime": "ca. 1 Std.", "nextTo": "Queenstown"}, {"city": "Queenstown", "subtitle": "Abenteuer-Hauptstadt der Welt", "dates": "Südinsel · Ski Jun–Okt", "nights": 5, "hotel": null, "icon": "🎿", "address": "Queenstown", "routeFrom": "Wānaka", "warning": null, "timezone": null, "wt": "DAS W&T-Zentrum: extrem viele Hospitality-, Touren- & Ski-Jobs (Winter). Teuer & voll – früh Unterkunft sichern. Bungee, Jetboat, Ski – alles hier.", "weather": {"icon": "🏔️", "condition": "Alpin, 4 Jahreszeiten", "tempHigh": 22, "tempLow": 10, "humidity": "60%", "uv": "11 (extrem)", "tip": "Sommer (Dez–Feb) warm für Wandern/See. Winter (Jun–Okt) Ski-Saison → beste Jobchancen. Wetter wechselt schnell."}, "bookings": [], "highlights": [{"name": "Skyline Gondola", "tipIcon": "🚠", "desc": "Panorama über Queenstown & The Remarkables + Luge", "bestTime": "Sonnenuntergang", "navAddress": "Skyline Queenstown"}, {"name": "Kawarau Bungy", "tipIcon": "🤸", "desc": "Weltweit erstes kommerzielles Bungee (43 m)", "bestTime": "Nach Buchung", "navAddress": "Kawarau Bridge Bungy"}, {"name": "The Remarkables / Coronet Peak", "tipIcon": "⛷️", "desc": "Skigebiete direkt bei der Stadt (Winter)", "bestTime": "Jun–Okt", "navAddress": "The Remarkables Ski Area"}, {"name": "Fergburger", "tipIcon": "🍔", "desc": "Legendärer Burgerladen – Kult unter Backpackern", "bestTime": "Außerhalb der Stoßzeiten", "navAddress": "Fergburger, Queenstown"}], "nextDistance": 170, "nextTime": "ca. 2,5 Std.", "nextTo": "Fiordland / Milford Sound"}, {"city": "Milford Sound", "subtitle": "Fiordland – das 8. Weltwunder", "dates": "Südinsel · Okt–April", "nights": 2, "hotel": null, "icon": "⛰️", "address": "Te Anau (Basis für Fiordland)", "routeFrom": "Queenstown", "warning": "Milford Road ist lang & abgelegen (kein Handynetz, tanken in Te Anau!). Bei Regen Lawinen-/Sperrgefahr – Wetter & DOC-Infos prüfen.", "timezone": null, "wt": "Te Anau ist die Basis. Saisonjobs in Lodges/Touren (Sommer). Milford Sound: einer der schönsten Orte der Erde.", "weather": {"icon": "🌧️", "condition": "Extrem regenreich", "tempHigh": 18, "tempLow": 9, "humidity": "90%", "uv": "9 (sehr hoch)", "tip": "Milford ist einer der nassesten Orte weltweit – bei Regen tosen hunderte Wasserfälle (auch schön!). Sandflies: Insektenschutz!"}, "bookings": [], "highlights": [{"name": "Milford Sound Cruise", "tipIcon": "🚢", "desc": "Bootstour zwischen Steilwänden & Wasserfällen", "bestTime": "Vormittags", "url": "https://www.doc.govt.nz/milford-sound", "urlLabel": "DOC Info", "navAddress": "Milford Sound"}, {"name": "Key Summit / Routeburn", "tipIcon": "🥾", "desc": "Alpine Tageswanderung mit Panorama", "bestTime": "Sommer", "navAddress": "Key Summit Track, Fiordland"}, {"name": "Te Anau Glowworm Caves", "tipIcon": "✨", "desc": "Glühwürmchen-Höhlen per Boot", "bestTime": "Abends", "navAddress": "Te Anau Glowworm Caves"}], "nextDistance": 420, "nextTime": "ca. 5,5 Std.", "nextTo": "Aoraki / Mount Cook"}, {"city": "Aoraki / Mount Cook", "subtitle": "Höchster Berg NZs & Sternenhimmel", "dates": "Südinsel · ganzjährig", "nights": 2, "hotel": null, "icon": "🗻", "address": "Aoraki/Mount Cook Village", "routeFrom": "Milford Sound (Te Anau)", "warning": null, "timezone": null, "wt": "Kleines Bergdorf, Dark-Sky-Reserve (Sterne!). Wenige, aber begehrte Lodge-Jobs. Traumhaft für Wanderer.", "weather": {"icon": "🏔️", "condition": "Hochalpin, kühl", "tempHigh": 18, "tempLow": 6, "humidity": "65%", "uv": "11 (extrem)", "tip": "Nachts kalt (auch Sommer). Klarer Himmel = weltbestes Sternegucken. Wetter kann schnell umschlagen."}, "bookings": [], "highlights": [{"name": "Hooker Valley Track", "tipIcon": "🥾", "desc": "Leichte 3-Std.-Wanderung zum Gletschersee vor Mt Cook", "bestTime": "Vormittags", "url": "https://www.doc.govt.nz/hookervalley", "urlLabel": "DOC Info", "navAddress": "Hooker Valley Track"}, {"name": "Lake Tekapo", "tipIcon": "💙", "desc": "Türkissee, Church of the Good Shepherd, Sternehimmel", "bestTime": "Sonnenuntergang & Nacht", "navAddress": "Lake Tekapo"}, {"name": "Tasman Glacier", "tipIcon": "🧊", "desc": "Größter Gletscher NZs – Eisberg-See", "bestTime": "Tag", "navAddress": "Tasman Glacier View"}], "nextDistance": 330, "nextTime": "ca. 4,5 Std.", "nextTo": "Dunedin & Catlins"}, {"city": "Dunedin & Catlins", "subtitle": "Schottisches Erbe & Tierwelt", "dates": "Südinsel · ganzjährig", "nights": 3, "hotel": null, "icon": "🐧", "address": "Dunedin", "routeFrom": "Aoraki / Mount Cook", "warning": null, "timezone": null, "wt": "Studentenstadt (Uni) mit günstigem Leben & Jobs. Otago Peninsula: Pinguine, Albatrosse, Robben. Catlins: wilde Küste im Süden.", "weather": {"icon": "🌦️", "condition": "Kühl, wechselhaft", "tempHigh": 19, "tempLow": 10, "humidity": "78%", "uv": "9 (sehr hoch)", "tip": "Kühler & wechselhafter Süden. Warme, wind-/regenfeste Kleidung. Tierbeobachtung ganzjährig."}, "bookings": [], "highlights": [{"name": "Otago Peninsula", "tipIcon": "🐧", "desc": "Gelbaugen-Pinguine, Albatrosse & Robben", "bestTime": "Abenddämmerung", "navAddress": "Otago Peninsula, Dunedin"}, {"name": "Baldwin Street", "tipIcon": "📈", "desc": "Eine der steilsten Straßen der Welt", "bestTime": "Jederzeit", "navAddress": "Baldwin Street, Dunedin"}, {"name": "Nugget Point (Catlins)", "tipIcon": "🌅", "desc": "Leuchtturm auf dramatischer Felsküste", "bestTime": "Sonnenaufgang", "navAddress": "Nugget Point Lighthouse"}, {"name": "Tunnel Beach", "tipIcon": "🌊", "desc": "Sandstein-Klippen & versteckter Strand", "bestTime": "Bei Ebbe", "navAddress": "Tunnel Beach, Dunedin"}], "nextDistance": null, "nextTime": null, "nextTo": null}];
+
+var HEADER_COLORS = [["#0e7490", "#22d3ee"], ["#0369a1", "#38bdf8"], ["#0d9488", "#2dd4bf"], ["#b45309", "#f59e0b"], ["#7f1d1d", "#ef4444"], ["#9a3412", "#fb923c"], ["#3730a3", "#818cf8"], ["#166534", "#4ade80"], ["#155e75", "#06b6d4"], ["#065f46", "#10b981"], ["#1e3a8a", "#60a5fa"], ["#4338ca", "#a5b4fc"], ["#5b21b6", "#a855f7"], ["#134e4a", "#14b8a6"], ["#1e40af", "#93c5fd"], ["#334155", "#94a3b8"]];
+
+// ===== DOC CLASSIFICATION =====
+function classifyDoc(filename){
+  var n = filename.toLowerCase();
+  if(n.indexOf('hotel')>-1||n.indexOf('lodge')>-1||n.indexOf('resort')>-1||n.indexOf('inn')>-1||n.indexOf('hyatt')>-1||n.indexOf('venetian')>-1) return {cat:'Hotelbuchung',icon:'🏨',color:'#2563eb'};
+  if(n.indexOf('esta')>-1) return {cat:'ESTA',icon:'📋',color:'#7c3aed'};
+  if(n.indexOf('flug')>-1||n.indexOf('flight')>-1||n.indexOf('boarding')>-1||n.indexOf('ticket_air')>-1||n.indexOf('lufthansa')>-1||n.indexOf('united')>-1) return {cat:'Flugticket',icon:'✈️',color:'#0e7490'};
+  if(n.indexOf('mietwagen')>-1||n.indexOf('rental')>-1||n.indexOf('enterprise')>-1||n.indexOf('hertz')>-1||n.indexOf('car')>-1||n.indexOf('avis')>-1) return {cat:'Mietwagen',icon:'🚗',color:'#ea580c'};
+  if(n.indexOf('pass')>-1||n.indexOf('passport')>-1||n.indexOf('ausweis')>-1||n.indexOf('perso')>-1) return {cat:'Reisepass/Ausweis',icon:'🛂',color:'#92400e'};
+  if(n.indexOf('versicher')>-1||n.indexOf('insurance')>-1||n.indexOf('krank')>-1) return {cat:'Versicherung',icon:'🛡️',color:'#16a34a'};
+  if(n.indexOf('ticket')>-1||n.indexOf('alcatraz')>-1||n.indexOf('konzert')>-1||n.indexOf('concert')>-1||n.indexOf('sheeran')>-1||n.indexOf('tour')>-1||n.indexOf('eintritt')>-1) return {cat:'Eintrittskarte',icon:'🎟️',color:'#d946ef'};
+  return {cat:'Sonstiges',icon:'📄',color:'#64748b'};
+}
+
+// Erkennt anhand des Dateinamens, zu welcher Station ein Dokument gehört. -1 = keine Zuordnung
+function detectStation(filename){
+  var n = filename.toLowerCase();
+  var map = [
+    {idx:0, keys:['auckland','akl','ankunft','sky tower','waiheke','mount eden','flug','flight','boarding','mietwagen','rental','sim-karte','ird','bankkonto']},
+    {idx:1, keys:['bay of islands','paihia','waitangi','cape reinga','hole in the rock']},
+    {idx:2, keys:['coromandel','whitianga','hot water beach','cathedral cove','hahei']},
+    {idx:3, keys:['rotorua','wai-o-tapu','waiotapu','te puia','redwoods','geysir']},
+    {idx:4, keys:['taupo','taup','tongariro','huka','alpine crossing']},
+    {idx:5, keys:['napier','hawke','art deco','art-deco','te mata','ernte']},
+    {idx:6, keys:['wellington','te papa','weta','cuba street','interislander','bluebridge','picton','faehre','ferry']},
+    {idx:7, keys:['marlborough','nelson','abel tasman','blenheim','kaiteriteri','split apple']},
+    {idx:8, keys:['kaikoura','kaik','whale','wal-','walbeobacht']},
+    {idx:9, keys:['christchurch','chch','botanic','cardboard','gondola','arthur']},
+    {idx:10, keys:['franz josef','fox glacier','gletscher','glacier','matheson','hokitika']},
+    {idx:11, keys:['wanaka','roys peak','wanaka tree','rob roy']},
+    {idx:12, keys:['queenstown','skyline','bungy','bungee','remarkables','coronet','fergburger']},
+    {idx:13, keys:['milford','te anau','fiordland','routeburn','key summit','glowworm']},
+    {idx:14, keys:['aoraki','mount cook','mt cook','hooker','tekapo','tasman glacier']},
+    {idx:15, keys:['dunedin','catlins','otago','baldwin','nugget','tunnel beach','pinguin','penguin']}
+  ];
+  for(var i=0;i<map.length;i++){
+    for(var j=0;j<map[i].keys.length;j++){
+      if(n.indexOf(map[i].keys[j])>-1) return map[i].idx;
+    }
+  }
+  return -1;
+}
+
+// ===== NAVIGATION =====
+function go(idx){
+  var cur=document.getElementById('p-'+current);
+  if(cur) cur.style.display='none';
+  current=idx;
+  var el=document.getElementById('p-'+current);
+  if(el) el.style.display='';
+  var btns=document.querySelectorAll('.quick-bar button');
+  for(var i=0;i<btns.length;i++){
+    var bk=btns[i].getAttribute('data-key');
+    var cls = (bk===String(idx))?'active':'';
+    if(doneStations[bk]) cls += ' done';
+    btns[i].className=cls.trim();
+  }
+  window.scrollTo(0,0);
+}
+
+function toggleDarkMode(){
+  darkMode=!darkMode;
+  localStorage.setItem('nz_darkMode',darkMode);
+  document.body.classList.toggle('dark-mode');
+  document.getElementById('darkBtn').textContent = darkMode ? '☀️' : '🌙';
+}
+
+function markDone(idx){
+  doneStations[idx] = !doneStations[idx];
+  localStorage.setItem('nz_done',JSON.stringify(doneStations));
+  renderStations(); go(idx); renderStats();
+}
+
+// ===== EIGENE ZWISCHENSTOPPS =====
+function openAddStop(){
+  refreshRoute();
+  var sel=document.getElementById('stopAfter'), opt='';
+  for(var r=0;r<ROUTE.length;r++){ opt+='<option value="'+ROUTE[r].key+'">'+ROUTE[r].stop.icon+' '+ROUTE[r].stop.city+'</option>'; }
+  sel.innerHTML=opt;
+  document.getElementById('stopName').value='';
+  document.getElementById('stopIcon').value='📍';
+  document.getElementById('addStopModal').classList.add('open');
+}
+function saveStop(){
+  var name=document.getElementById('stopName').value.trim();
+  if(!name){ document.getElementById('stopName').focus(); return; }
+  var icon=document.getElementById('stopIcon').value.trim()||'📍';
+  var after=parseInt(document.getElementById('stopAfter').value,10);
+  var maxk=999;
+  for(var c=0;c<customStops.length;c++){ if(customStops[c].key>maxk) maxk=customStops[c].key; }
+  var key=maxk+1;
+  customStops.push({key:key,name:name,icon:icon,after:after});
+  try{ localStorage.setItem('nz_custom',JSON.stringify(customStops)); }catch(e){}
+  closeModal('addStopModal');
+  refreshRoute(); renderStats(); renderQuickBar(); renderStations(); go(key);
+}
+function deleteStop(key){
+  if(!confirm('Diesen Zwischenstopp inkl. Notizen, Tagebuch & Fotos löschen?')) return;
+  customStops=customStops.filter(function(c){ return c.key!==key; });
+  try{
+    localStorage.setItem('nz_custom',JSON.stringify(customStops));
+    delete notes[key]; delete diary[key]; delete diaryDays[key]; delete docs[key]; delete links[key]; delete doneStations[key];
+    localStorage.setItem('nz_notes',JSON.stringify(notes));
+    localStorage.setItem('nz_diary',JSON.stringify(diary));
+    saveDiaryDays();
+    localStorage.setItem('nz_docs',JSON.stringify(docs));
+    localStorage.setItem('nz_links',JSON.stringify(links));
+    localStorage.setItem('nz_done',JSON.stringify(doneStations));
+  }catch(e){}
+  if(mediaDB){ try{
+    var idx=mediaDB.transaction('photos','readonly').objectStore('photos').index('station').getAllKeys(key);
+    idx.onsuccess=function(){ var ids=idx.result||[]; if(ids.length){ var tx=mediaDB.transaction('photos','readwrite'); for(var n=0;n<ids.length;n++) tx.objectStore('photos').delete(ids[n]); } };
+  }catch(e){} }
+  refreshRoute(); renderStats(); renderQuickBar(); renderStations(); go(0);
+}
+
+// ===== CURRENCY =====
+function openConverter(){ document.getElementById('convModal').classList.add('open'); }
+// Einheiten-Umrechnung: metrisch = US * factor (a = US-Feld, b = metrisches Feld)
+function uRound(x){ return Math.round(x*10000)/10000; }
+function uconv(aId, bId, factor, from){
+  var a=document.getElementById(aId), b=document.getElementById(bId);
+  if(from==='a'){ var v=parseFloat(a.value); b.value = isNaN(v) ? '' : uRound(v*factor); }
+  else { var w=parseFloat(b.value); a.value = isNaN(w) ? '' : uRound(w/factor); }
+}
+// Temperatur (kein einfacher Faktor)
+function tconv(from){
+  var f=document.getElementById('u_f'), c=document.getElementById('u_c');
+  if(from==='f'){ var v=parseFloat(f.value); c.value = isNaN(v) ? '' : Math.round((v-32)*5/9*10)/10; }
+  else { var w=parseFloat(c.value); f.value = isNaN(w) ? '' : Math.round((w*9/5+32)*10)/10; }
+}
+function closeModal(id){ document.getElementById(id).classList.remove('open'); }
+function convFromEur(){
+  var v=parseFloat(document.getElementById('eurInput').value)||0;
+  document.getElementById('usdInput').value = (v*rate).toFixed(2);
+}
+function convFromUsd(){
+  var v=parseFloat(document.getElementById('usdInput').value)||0;
+  document.getElementById('eurInput').value = (v/rate).toFixed(2);
+}
+var swapped=false;
+function swapConv(){
+  var e=document.getElementById('eurInput').value;
+  document.getElementById('eurInput').value=document.getElementById('usdInput').value;
+  document.getElementById('usdInput').value=e;
+}
+function loadRate(){
+  try{
+    var xhr=new XMLHttpRequest();
+    xhr.open('GET','https://api.exchangerate.host/latest?base=EUR&symbols=NZD',true);
+    xhr.timeout=4000;
+    xhr.onreadystatechange=function(){
+      if(xhr.readyState===4){
+        try{
+          var data=JSON.parse(xhr.responseText);
+          if(data&&data.rates&&data.rates.NZD){
+            rate=data.rates.NZD;
+            document.getElementById('rateInfo').textContent='Aktueller Kurs: 1 € = '+rate.toFixed(4)+' $ (live)';
+          }else{ fallbackRate(); }
+        }catch(e){ fallbackRate(); }
+      }
+    };
+    xhr.ontimeout=fallbackRate;
+    xhr.onerror=fallbackRate;
+    xhr.send();
+  }catch(e){ fallbackRate(); }
+}
+function fallbackRate(){
+  rate=FALLBACK_RATE;
+  document.getElementById('rateInfo').textContent='Fester Kurs: 1 € = '+rate.toFixed(2)+' $ (offline)';
+}
+
+// ===== DRIVE =====
+function getDriveUrl(){ return localStorage.getItem('nz_drive') || DRIVE_URL || ''; }
+function openDrive(){
+  // Öffnet direkt den gespeicherten Ordner; wenn keiner gesetzt ist, Dialog zeigen
+  var url=getDriveUrl();
+  if(!url){ setDrive(); return; }
+  openSavedDrive();
+}
+function setDrive(){
+  document.getElementById('driveInput').value=getDriveUrl();
+  document.getElementById('driveStatus').textContent='';
+  document.getElementById('driveModal').classList.add('open');
+}
+function saveDrive(){
+  var v=document.getElementById('driveInput').value.trim();
+  localStorage.setItem('nz_drive', v);
+  document.getElementById('driveStatus').textContent = v ? '✓ Gespeichert' : 'Ordner-URL geleert';
+}
+function openSavedDrive(){
+  var url=document.getElementById('driveInput') && document.getElementById('driveModal').classList.contains('open')
+    ? (document.getElementById('driveInput').value.trim() || getDriveUrl())
+    : getDriveUrl();
+  if(!url){ setDrive(); return; }
+  // erst speichern, dann öffnen
+  localStorage.setItem('nz_drive', url);
+  var a=document.createElement('a');
+  a.href=url; a.target='_blank'; a.rel='noopener';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+
+// ===== EMERGENCY =====
+function openEmergency(){ document.getElementById('emModal').classList.add('open'); }
+function openWT(){ document.getElementById('wtModal').classList.add('open'); }
+
+// ===== NOTES =====
+function saveNote(idx){
+  var val=document.getElementById('note-'+idx).value;
+  notes[idx]=val;
+  localStorage.setItem('nz_notes',JSON.stringify(notes));
+  var s=document.getElementById('note-saved-'+idx);
+  s.textContent='✓ Gespeichert';
+  setTimeout(function(){ s.textContent=''; },1500);
+}
+
+// ===== DOCUMENTS =====
+function dzOver(e,idx){ e.preventDefault(); document.getElementById('dz-'+idx).classList.add('active'); }
+function dzLeave(e,idx){ document.getElementById('dz-'+idx).classList.remove('active'); }
+function dzDrop(e,idx){ e.preventDefault(); document.getElementById('dz-'+idx).classList.remove('active'); handleFiles(e.dataTransfer.files,idx); }
+function dzInput(e,idx){ handleFiles(e.target.files,idx); }
+// Dokumente werden LOKAL auf dem Gerät gespeichert (IndexedDB – auch große PDFs
+// wie Reisepass/Visum). Sie verlassen das Gerät NICHT und landen nie im Internet.
+function handleFiles(files,idx){
+  if(!mediaDB){ alert('Speicher wird noch geladen – bitte kurz warten und erneut versuchen.'); return; }
+  var arr=Array.prototype.slice.call(files), total=arr.length, done=0, moved=0, lastTarget=idx;
+  if(total===0) return;
+  function finishUp(){
+    if(moved>0) showToast(moved+' Dokument(e) automatisch zugeordnet');
+    renderStations(); go(lastTarget);
+  }
+  arr.forEach(function(file){
+    var info=classifyDoc(file.name);
+    var det=detectStation(file.name);
+    var target = (det>-1) ? det : idx;   // Smart-Zuordnung nach Dateiname
+    if(det>-1 && det!==idx) moved++;
+    lastTarget=target;
+    var reader=new FileReader();
+    reader.onload=function(ev){
+      try{
+        var rec={station:target,name:file.name,cat:info.cat,icon:info.icon,color:info.color,size:(file.size/1024/1024).toFixed(2)+' MB',type:file.type||'',data:ev.target.result,ts:Date.now()};
+        var tx=mediaDB.transaction('localdocs','readwrite');
+        tx.objectStore('localdocs').add(rec);
+        tx.oncomplete=function(){ done++; if(done===total) finishUp(); };
+        tx.onerror=function(){ done++; if(done===total){ alert('Ein Dokument konnte nicht gespeichert werden (evtl. Speicher voll).'); finishUp(); } };
+      }catch(e){ done++; if(done===total) finishUp(); }
+    };
+    reader.onerror=function(){ done++; if(done===total) finishUp(); };
+    reader.readAsDataURL(file);
+  });
+}
+function pdfFallbackHtml(){
+  return '<div style="text-align:center;padding:24px 8px">'
+    +'<div style="font-size:44px">📄</div>'
+    +'<p style="font-weight:700;margin:10px 0 4px">PDF-Dokument</p>'
+    +'<p style="font-size:13px;color:var(--text-secondary)">Vorschau nicht möglich (evtl. offline). Unten „In neuem Tab öffnen" oder herunterladen.</p>'
+    +'</div>';
+}
+// PDF direkt in der App rendern (kein Verlassen der App nötig)
+function renderPdfInline(url, container){
+  if(typeof pdfjsLib==='undefined'){ container.innerHTML=pdfFallbackHtml(); return; }
+  container.innerHTML='<p style="color:var(--text-secondary);font-size:13px;text-align:center;padding:20px">PDF wird geladen…</p>';
+  var width=container.clientWidth||600;
+  pdfjsLib.getDocument(url).promise.then(function(pdf){
+    container.innerHTML='';
+    var chain=Promise.resolve();
+    for(var p=1;p<=pdf.numPages;p++){
+      (function(pn){
+        chain=chain.then(function(){
+          return pdf.getPage(pn).then(function(page){
+            var base=page.getViewport({scale:1});
+            var vp=page.getViewport({scale:(width/base.width)});
+            var canvas=document.createElement('canvas');
+            canvas.width=vp.width; canvas.height=vp.height;
+            canvas.style.width='100%'; canvas.style.marginBottom='10px'; canvas.style.borderRadius='6px'; canvas.style.border='1px solid var(--border)';
+            container.appendChild(canvas);
+            return page.render({canvasContext:canvas.getContext('2d'),viewport:vp}).promise;
+          });
+        });
+      })(p);
+    }
+    chain.catch(function(){ container.innerHTML=pdfFallbackHtml(); });
+  }).catch(function(){ container.innerHTML=pdfFallbackHtml(); });
+}
+function showInViewer(d){
+  var delBtn=document.getElementById('docDelete');
+  if(delBtn){ delBtn.style.display='none'; delBtn.onclick=null; }   // nur bei Tagebuch-Fotos einblenden
+  document.getElementById('docTitle').textContent=(d.icon?d.icon+' ':'')+d.name;
+  var view=document.getElementById('docView');
+  var dl=document.getElementById('docDownload');
+  var op=document.getElementById('docOpen');
+  var src = d.url ? d.url : (d.data||'');   // verlinkte Datei ODER eingebettete Daten
+  var type = d.type || '';
+  var isImg = (type.indexOf('image')>-1) || src.indexOf('image/')>-1 || /\.(png|jpe?g|gif|webp|heic)$/i.test(src);
+  var isPdf = (type.indexOf('pdf')>-1) || src.indexOf('application/pdf')>-1 || /\.pdf$/i.test(src);
+  dl.href=src; dl.download=d.name;
+  op.href=src;
+  document.getElementById('docModal').classList.add('open');
+  if(isImg){
+    view.innerHTML='<img src="'+src+'" alt="'+d.name+'">';
+  } else if(isPdf){
+    view.innerHTML='<p style="color:var(--text-secondary);font-size:13px;text-align:center;padding:20px">PDF wird geladen…</p>';
+    setTimeout(function(){ renderPdfInline(src, view); }, 60);
+  } else {
+    view.innerHTML='<p style="color:var(--text-secondary);font-size:14px;padding:16px">Für diesen Dateityp ('+(type||'unbekannt')+') gibt es keine Vorschau. Bitte „In neuem Tab öffnen" oder herunterladen.</p>';
+  }
+  document.getElementById('docModal').classList.add('open');
+}
+function viewShared(idx,sd){ showInViewer(SHARED_DOCS[idx][sd]); }
+function openAllDocs(){
+  var html='', total=0;
+  for(var _r=0;_r<ROUTE.length;_r++){
+    var i=ROUTE[_r].key;
+    var sdocs=SHARED_DOCS[i]||[];
+    var slinks=SHARED_LINKS[i]||[];
+    var mine=docs[i]||[];
+    var mylinks=links[i]||[];
+    if(sdocs.length+slinks.length+mine.length+mylinks.length===0) continue;
+    html+='<div style="margin-top:16px;font-weight:700;font-size:14px;border-top:1px solid var(--border);padding-top:10px">'+ROUTE[_r].stop.icon+' '+ROUTE[_r].stop.city+'</div>';
+    for(var d=0;d<sdocs.length;d++){
+      var info=classifyDoc(sdocs[d].name); total++;
+      html+='<div class="doc-item"><span style="font-size:20px">'+info.icon+'</span><div class="doc-meta"><div class="doc-name">'+sdocs[d].name+'</div></div><button class="icon-btn" onclick="closeModal(\'allDocsModal\');viewShared('+i+','+d+')" title="Öffnen">👁️</button></div>';
+    }
+    for(var l=0;l<slinks.length;l++){
+      var li=classifyDoc(slinks[l].name); total++;
+      html+='<div class="doc-item"><span style="font-size:20px">'+li.icon+'</span><div class="doc-meta"><div class="doc-name">'+slinks[l].name+'</div></div><button class="icon-btn" onclick="openLink(\''+slinks[l].url.replace(/'/g,"\\'")+'\')" title="Öffnen">↗️</button></div>';
+    }
+    for(var m2=0;m2<mine.length;m2++){
+      total++;
+      html+='<div class="doc-item"><span style="font-size:20px">'+mine[m2].icon+'</span><div class="doc-meta"><div class="doc-name">'+mine[m2].name+' <span style="font-size:11px;color:var(--text-secondary)">(lokal)</span></div></div><button class="icon-btn" onclick="closeModal(\'allDocsModal\');viewDoc('+i+','+m2+')" title="Öffnen">👁️</button></div>';
+    }
+    for(var ml=0;ml<mylinks.length;ml++){
+      total++;
+      html+='<div class="doc-item"><span style="font-size:20px">'+mylinks[ml].icon+'</span><div class="doc-meta"><div class="doc-name">'+mylinks[ml].name+' <span style="font-size:11px;color:var(--text-secondary)">(lokal)</span></div></div><button class="icon-btn" onclick="openLink(\''+mylinks[ml].url.replace(/'/g,"\\'")+'\')" title="Öffnen">↗️</button></div>';
+    }
+  }
+  if(!html) html='<p style="color:var(--text-secondary)">Noch keine Dokumente.</p>';
+  document.getElementById('allDocsTitle').textContent='📎 Alle Dokumente ('+total+')';
+  document.getElementById('allDocsList').innerHTML=html;
+  document.getElementById('allDocsModal').classList.add('open');
+}
+function viewDoc(idx,di){
+  showInViewer(docs[idx][di]);
+}
+function moveDoc(fromIdx, di, toIdx){
+  toIdx=parseInt(toIdx,10);
+  if(toIdx===fromIdx) return;
+  if(!docs[toIdx]) docs[toIdx]=[];
+  var d=docs[fromIdx].splice(di,1)[0];
+  docs[toIdx].push(d);
+  try{ localStorage.setItem('nz_docs',JSON.stringify(docs)); }catch(e){}
+  renderStations(); go(fromIdx);
+}
+function deleteDoc(idx,di){
+  docs[idx].splice(di,1);
+  localStorage.setItem('nz_docs',JSON.stringify(docs));
+  renderStations(); go(idx);
+}
+
+// ===== DRIVE-LINKS PRO STATION =====
+function addLink(idx){
+  var urlEl=document.getElementById('lk-url-'+idx);
+  var nameEl=document.getElementById('lk-name-'+idx);
+  var url=urlEl.value.trim();
+  if(!url){ urlEl.focus(); return; }
+  if(url.indexOf('http')!==0) url='https://'+url;
+  var name=nameEl.value.trim();
+  if(!name){
+    // Name aus URL ableiten
+    name=decodeURIComponent(url.split('/').pop().split('?')[0]) || 'Drive-Dokument';
+  }
+  var info=classifyDoc(name);
+  var det=detectStation(name);
+  var target=(det>-1)?det:idx;
+  if(!links[target]) links[target]=[];
+  links[target].push({name:name,url:url,cat:info.cat,icon:info.icon,color:info.color});
+  try{ localStorage.setItem('nz_links',JSON.stringify(links)); }catch(e){}
+  urlEl.value=''; nameEl.value='';
+  renderStations(); go(target);
+  if(det>-1 && det!==idx){
+    var s=document.getElementById('lk-status-'+target);
+    if(s){ s.textContent='✓ Automatisch '+STOPS[target].city+' zugeordnet'; setTimeout(function(){s.textContent='';},2500); }
+  }
+}
+function openLink(url){
+  var a=document.createElement('a');
+  a.href=url; a.target='_blank'; a.rel='noopener';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+function moveLink(fromIdx,li,toIdx){
+  toIdx=parseInt(toIdx,10);
+  if(toIdx===fromIdx) return;
+  if(!links[toIdx]) links[toIdx]=[];
+  var l=links[fromIdx].splice(li,1)[0];
+  links[toIdx].push(l);
+  try{ localStorage.setItem('nz_links',JSON.stringify(links)); }catch(e){}
+  renderStations(); go(fromIdx);
+}
+function deleteLink(idx,li){
+  links[idx].splice(li,1);
+  localStorage.setItem('nz_links',JSON.stringify(links));
+  renderStations(); go(idx);
+}
+
+// ===== SEARCH =====
+function doSearch(){
+  var q=document.getElementById('searchInput').value.toLowerCase();
+  var btns=document.querySelectorAll('.quick-bar button');
+  if(!q){ for(var i=0;i<btns.length;i++){ btns[i].style.opacity='1'; } return; }
+  for(var i=0;i<STOPS.length;i++){
+    var s=STOPS[i];
+    var blob=(s.city+' '+s.subtitle+' '+(s.hotel||'')+' '+JSON.stringify(s.highlights)+' '+JSON.stringify(s.bookings)).toLowerCase();
+    btns[i].style.opacity = blob.indexOf(q)>-1 ? '1' : '0.25';
+  }
+}
+
+// ===== RENDER =====
+function renderStats(){
+  var totalNights=0, totalKm=0, doneCount=0, docCount=0;
+  for(var r=0;r<ROUTE.length;r++){
+    var key=ROUTE[r].key, st=ROUTE[r].stop;
+    totalNights+=st.nights||0;
+    if(st.nextDistance) totalKm+=st.nextDistance;
+    if(doneStations[key]) doneCount++;
+    if(docs[key]) docCount+=docs[key].length;
+  }
+  var html='';
+  html+='<div class="stat"><div class="num">'+ROUTE.length+'</div><div class="lbl">Stationen</div></div>';
+  html+='<div class="stat"><div class="num">'+totalNights+'</div><div class="lbl">Tage</div></div>';
+  html+='<div class="stat"><div class="num">'+totalKm+'</div><div class="lbl">km gesamt</div></div>';
+  html+='<div class="stat"><div class="num">'+docCount+'</div><div class="lbl">Dokumente</div></div>';
+  document.getElementById('stats').innerHTML=html;
+}
+
+function renderCountdown(){
+  var start=new Date(TRIP_START), now=new Date();
+  var diff=Math.ceil((start-now)/(1000*60*60*24));
+  var txt;
+  if(diff>0) txt='Noch '+diff+' Tage bis zur Reise! 🎉';
+  else if(diff>-25) txt='Die Reise läuft — viel Spaß! 🌴';
+  else txt='Was für eine Reise! 📸';
+  document.getElementById('countdown').textContent=txt;
+}
+
+// Celsius -> Fahrenheit
+function c2f(c){ return Math.round(c*9/5+32); }
+
+// Uhrzeit im Heimatdorf Mühlau (Deutschland, Zeitzone Europe/Berlin)
+function updateHomeClock(){
+  var el=document.getElementById('homeclock');
+  if(!el) return;
+  try{
+    var t=new Intl.DateTimeFormat('de-DE',{timeZone:'Europe/Berlin',hour:'2-digit',minute:'2-digit'}).format(new Date());
+    el.textContent='🇩🇪 Mühlau: '+t+' Uhr';
+  }catch(e){
+    el.textContent='';
+  }
+}
+
+function renderQuickBar(){
+  var bar=document.getElementById('quickBar');
+  bar.innerHTML='';
+  for(var r=0;r<ROUTE.length;r++){
+    var key=ROUTE[r].key, st=ROUTE[r].stop;
+    var btn=document.createElement('button');
+    btn.textContent=st.icon;
+    btn.title=st.city;
+    btn.setAttribute('data-key', String(key));
+    btn.onclick=(function(k){return function(){go(k);};})(key);
+    var cls=(r===0)?'active':'';
+    if(doneStations[key]) cls+=' done';
+    btn.className=cls.trim();
+    bar.appendChild(btn);
+  }
+}
+
+function renderStations(){
+  refreshRoute();
+  var main=document.getElementById('mainContent');
+  main.innerHTML='';
+  for(var _r=0;_r<ROUTE.length;_r++){
+    var i=ROUTE[_r].key;
+    var stop=ROUTE[_r].stop;
+    var isCustom=!!stop._custom;
+    var card=document.createElement('div');
+    card.id='p-'+i;
+    card.style.display='none';
+    card.className='station-card';
+    var c=HEADER_COLORS[i]||['#4c1d95','#7c3aed'];
+
+    var h='<div class="station-header" style="background:linear-gradient(135deg,'+c[0]+' 0%,'+c[1]+' 100%)">';
+    if(doneStations[i]) h+='<div class="done-badge">✓ erledigt</div>';
+    h+='<div class="station-title">'+stop.icon+' '+stop.city+'</div>';
+    h+='<div class="station-subtitle">'+stop.subtitle+'</div></div>';
+
+    h+='<div class="station-body">';
+
+    // Route von Vorgänger
+    if(stop.routeFrom){
+      h+='<div class="route-box"><div class="rt-title">🧭 Anfahrt von '+stop.routeFrom+'</div>';
+      h+='<div style="font-size:13px;color:var(--text-secondary)">'+prevDistanceText(i)+'</div>';
+      h+='<a class="route-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin='+encodeURIComponent(stop.routeFrom)+'&destination='+encodeURIComponent(stop.city)+'">🚗 Route in Google Maps öffnen</a>';
+      h+='</div>';
+    }
+
+    h+='<div class="info-row"><strong>Region &amp; Zeit</strong><span style="text-align:right">'+stop.dates+'</span></div>';
+    if(stop.nights>0) h+='<div class="info-row"><strong>Empf. Aufenthalt</strong><span>'+stop.nights+' Tage</span></div>';
+    if(stop.hotel) h+='<div class="info-row"><strong>Hotel</strong><span>'+stop.hotel+'</span></div>';
+    if(stop.address) h+='<div class="info-row"><strong>Adresse</strong><span><a href="https://maps.google.com/?q='+encodeURIComponent(stop.address)+'" target="_blank" style="color:var(--accent);text-decoration:none">📍 Karte</a> · <a href="https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(stop.address)+'" target="_blank" style="color:var(--accent);text-decoration:none">🧭 Navi</a></span></div>';
+    if(stop.arrival) h+='<div class="info-row"><strong>Ankunft</strong><span style="text-align:right">'+stop.arrival+'</span></div>';
+    if(stop.warning) h+='<div class="warning-banner">⚠️ '+stop.warning+'</div>';
+    if(stop.timezone) h+='<div class="timezone-banner">🕐 '+stop.timezone+'</div>';
+    if(stop.wt) h+='<div style="background:#dcfce7;border-left:4px solid #16a34a;padding:12px;margin:12px 0;border-radius:6px;color:#14532d;font-size:14px">🎒 <b>Work &amp; Travel:</b> '+stop.wt+'</div>';
+
+    // Weather
+    if(stop.weather){
+      var w=stop.weather;
+      h+='<div class="weather-box"><div class="weather-top"><span style="font-size:32px">'+w.icon+'</span><div><div class="weather-temp">'+w.tempHigh+'°<span style="font-size:16px;color:var(--text-secondary)"> / '+w.tempLow+'° C</span></div><div style="font-size:12px;color:var(--text-secondary)">'+c2f(w.tempHigh)+'° / '+c2f(w.tempLow)+'° F</div><div style="font-size:13px;color:var(--text-secondary);margin-top:2px">'+w.condition+'</div></div></div>';
+      h+='<div class="weather-grid"><div>💧 Luftfeuchte: '+w.humidity+'</div><div>☀️ UV: '+w.uv+'</div></div>';
+      h+='<div class="weather-tip">💡 '+w.tip+'</div></div>';
+    }
+
+    // Bookings
+    if(stop.bookings&&stop.bookings.length>0){
+      h+='<div class="collapsible" onclick="this.classList.toggle(\'open\')">📋 Buchungen ('+stop.bookings.length+')</div><div class="collapsible-content">';
+      for(var j=0;j<stop.bookings.length;j++){
+        var bk=stop.bookings[j];
+        h+='<div class="booking-item"><div class="booking-title">'+bk.icon+' '+bk.title+'</div>';
+        if(bk.price) h+='<div style="font-size:13px;font-weight:700;color:var(--accent);margin:4px 0">'+bk.price+'</div>';
+        for(var k=0;k<bk.details.length;k++) h+='<div class="booking-detail">'+bk.details[k]+'</div>';
+        if(bk.extras) h+='<div style="font-size:12px;color:var(--text-secondary);margin-top:6px">'+bk.extras+'</div>';
+        if(bk.bookingWarning) h+='<div style="font-size:12px;background:#fef3c7;color:#78350f;padding:8px;margin-top:8px;border-radius:6px">⚠️ '+bk.bookingWarning+'</div>';
+        h+='</div>';
+      }
+      h+='</div>';
+    }
+
+    // Highlights
+    if(stop.highlights&&stop.highlights.length>0){
+      h+='<div class="collapsible" onclick="this.classList.toggle(\'open\')">⭐ Highlights ('+stop.highlights.length+')</div><div class="collapsible-content">';
+      for(var j=0;j<stop.highlights.length;j++){
+        var hl=stop.highlights[j];
+        h+='<div class="highlight-item"><div class="highlight-name">'+hl.tipIcon+' '+hl.name+'</div><div class="highlight-desc">'+hl.desc+'</div>';
+        if(hl.bestTime) h+='<div style="font-size:12px;color:var(--text-secondary)">🕐 '+hl.bestTime+'</div>';
+        if(hl.url) h+='<a href="'+hl.url+'" target="_blank" class="chip-link">'+hl.urlLabel+'</a>';
+        if(hl.navAddress) h+='<a href="https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(hl.navAddress)+'" target="_blank" class="chip-link nav">🧭 Navigieren</a>';
+        h+='</div>';
+      }
+      h+='</div>';
+    }
+
+    // Documents
+    var sharedArr = SHARED_LINKS[i] || [];
+    var sharedDocsArr = SHARED_DOCS[i] || [];
+    var dcount = (docs[i] ? docs[i].length : 0) + (links[i] ? links[i].length : 0) + sharedArr.length + sharedDocsArr.length;
+    h+='<div class="collapsible" onclick="this.classList.toggle(\'open\')">📎 Dokumente ('+dcount+')</div><div class="collapsible-content">';
+
+    // --- fest eingebettete Dokumente (für alle sichtbar) ---
+    if(sharedDocsArr.length>0){
+      for(var sd=0;sd<sharedDocsArr.length;sd++){
+        var sdoc=sharedDocsArr[sd];
+        var sdinfo=classifyDoc(sdoc.name);
+        h+='<div class="doc-item"><span style="font-size:22px">'+sdinfo.icon+'</span><div class="doc-meta"><div class="doc-name">'+sdoc.name+'</div><div class="doc-sub"><span class="doc-cat" style="background:'+sdinfo.color+'">'+sdinfo.cat+'</span> <span style="background:#16a34a;color:#fff;font-size:11px;padding:2px 8px;border-radius:12px">🌐 geteilt</span></div></div>';
+        h+='<button class="icon-btn" onclick="viewShared('+i+','+sd+')" title="Öffnen">👁️</button></div>';
+      }
+    }
+
+    // --- geteilte Drive-Links (fest im Code, für alle sichtbar) ---
+    if(sharedArr.length>0){
+      for(var sx=0;sx<sharedArr.length;sx++){
+        var sl=sharedArr[sx];
+        var sinfo=classifyDoc(sl.name);
+        h+='<div class="doc-item"><span style="font-size:22px">'+sinfo.icon+'</span><div class="doc-meta"><div class="doc-name">'+sl.name+'</div><div class="doc-sub"><span class="doc-cat" style="background:'+sinfo.color+'">'+sinfo.cat+'</span> <span style="background:#16a34a;color:#fff;font-size:11px;padding:2px 8px;border-radius:12px">🌐 geteilt</span></div></div>';
+        h+='<button class="icon-btn" onclick="openLink(\''+sl.url.replace(/'/g,"\\'")+'\')" title="Öffnen">↗️</button></div>';
+      }
+    }
+
+    // --- Drive-Link hinzufügen ---
+    h+='<div style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:10px">';
+    h+='<div style="font-weight:700;font-size:13px;margin-bottom:8px">🔗 Eigenen Drive-Link hinzufügen <span style="font-weight:400;color:var(--text-secondary)">(nur auf diesem Gerät)</span></div>';
+    h+='<input id="lk-url-'+i+'" type="text" placeholder="Drive-Freigabe-Link einfügen (https://drive.google.com/...)" style="width:100%;padding:9px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text);font-size:13px;margin-bottom:6px">';
+    h+='<input id="lk-name-'+i+'" type="text" placeholder="Name (optional, z.B. Ticket Ed Sheeran)" style="width:100%;padding:9px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text);font-size:13px;margin-bottom:6px">';
+    h+='<button class="chip-link" style="border:none;cursor:pointer" onclick="addLink('+i+')">+ Link hinzufügen</button>';
+    h+='<div id="lk-status-'+i+'" style="font-size:12px;color:#16a34a;height:16px;margin-top:4px"></div>';
+    h+='<div style="font-size:11px;color:var(--text-secondary)">Tipp: Name mit Stichwort (z.B. „Ed Sheeran", „Bootstour") wird automatisch der passenden Station zugeordnet.</div>';
+    h+='</div>';
+
+    // --- vorhandene Links ---
+    if(links[i]){
+      for(var l=0;l<links[i].length;l++){
+        var lk=links[i][l];
+        h+='<div class="doc-item"><span style="font-size:22px">'+lk.icon+'</span><div class="doc-meta"><div class="doc-name">'+lk.name+'</div><div class="doc-sub"><span class="doc-cat" style="background:'+lk.color+'">'+lk.cat+'</span> 🔗 Drive-Link</div>';
+        h+='<select class="doc-move" onchange="moveLink('+i+','+l+',this.value)">';
+        for(var so=0;so<ROUTE.length;so++){ var ok=ROUTE[so].key; h+='<option value="'+ok+'"'+(ok===i?' selected':'')+'>'+ROUTE[so].stop.icon+' '+ROUTE[so].stop.city+'</option>'; }
+        h+='</select></div>';
+        h+='<button class="icon-btn" onclick="openLink(\''+lk.url.replace(/'/g,"\\'")+'\')" title="Öffnen">↗️</button><button class="icon-btn" onclick="deleteLink('+i+','+l+')" title="Löschen">🗑️</button></div>';
+      }
+    }
+
+    // --- Eigene Dokumente: nur lokal auf dem Gerät (auch große PDFs wie Pass/Visum) ---
+    h+='<div style="font-weight:700;font-size:13px;margin:8px 0 6px">🔒 Meine Dokumente <span style="font-weight:400;color:var(--text-secondary)">(bleiben nur auf diesem Gerät)</span></div>';
+    h+='<div class="dropzone" id="dz-'+i+'" ondragover="dzOver(event,'+i+')" ondragleave="dzLeave(event,'+i+')" ondrop="dzDrop(event,'+i+')" onclick="document.getElementById(\'fi-'+i+'\').click()">';
+    h+='<div class="dz-icon">📤</div><div class="dz-main">Dokument hochladen</div><div class="dz-sub">PDF oder Bild · z.B. Reisepass, Visum, Ticket · Auto-Erkennung · wird NICHT ins Internet geladen</div>';
+    h+='<input type="file" id="fi-'+i+'" accept="application/pdf,image/*" multiple style="display:none" onchange="dzInput(event,'+i+')"></div>';
+    h+='<div id="mydocs-'+i+'"></div>';
+    // Alt-Bestand: früher lokal (localStorage) gespeicherte Dokumente – weiterhin sichtbar
+    if(docs[i]){
+      for(var d=0;d<docs[i].length;d++){
+        var doc=docs[i][d];
+        h+='<div class="doc-item"><span style="font-size:22px">'+doc.icon+'</span><div class="doc-meta"><div class="doc-name">'+doc.name+'</div><div class="doc-sub"><span class="doc-cat" style="background:'+doc.color+'">'+doc.cat+'</span> '+doc.size+' <span style="background:#0ea5e9;color:#fff;font-size:11px;padding:2px 8px;border-radius:12px">🔒 nur auf diesem Gerät</span></div>';
+        h+='<select class="doc-move" onchange="moveDoc('+i+','+d+',this.value)">';
+        for(var so=0;so<ROUTE.length;so++){ var ok=ROUTE[so].key; h+='<option value="'+ok+'"'+(ok===i?' selected':'')+'>'+ROUTE[so].stop.icon+' '+ROUTE[so].stop.city+'</option>'; }
+        h+='</select></div>';
+        h+='<button class="icon-btn" onclick="viewDoc('+i+','+d+')" title="Öffnen">👁️</button><button class="icon-btn" onclick="deleteDoc('+i+','+d+')" title="Löschen">🗑️</button></div>';
+      }
+    }
+    h+='</div>';
+
+    // Notes
+    h+='<div class="collapsible" onclick="this.classList.toggle(\'open\')">📝 Notizen</div><div class="collapsible-content">';
+    h+='<textarea class="notes" id="note-'+i+'" placeholder="Eigene Notizen zu '+stop.city+'..." oninput="saveNote('+i+')">'+(notes[i]||'')+'</textarea>';
+    h+='<div class="notes-saved" id="note-saved-'+i+'"></div></div>';
+
+    // Tagebuch – mehrere Tage pro Station (jeder Tag mit eigenem Text & Fotos), lokal auf dem Gerät
+    h+='<div class="collapsible" onclick="this.classList.toggle(\'open\')">📔 Tagebuch</div><div class="collapsible-content">';
+    var days=ensureDays(i);
+    for(var dd=0;dd<days.length;dd++){
+      var day=days[dd], did=day.id;
+      h+='<div class="diary-day">';
+      h+='<div class="diary-day-head"><span class="diary-day-title">📅 Tag '+(dd+1)+'</span>';
+      if(days.length>1) h+='<button class="diary-day-del" onclick="deleteDiaryDay('+i+',\''+did+'\')">🗑️ Tag löschen</button>';
+      h+='</div>';
+      h+='<textarea class="notes" id="diary-'+i+'-'+did+'" placeholder="Was hast du an Tag '+(dd+1)+' in '+stop.city+' erlebt?" oninput="saveDiaryDay('+i+',\''+did+'\')">'+(day.text||'')+'</textarea>';
+      h+='<div class="notes-saved" id="diary-saved-'+i+'-'+did+'"></div>';
+      h+='<div class="diary-upload" onclick="document.getElementById(\'diary-file-'+i+'-'+did+'\').click()">📷 Fotos zu Tag '+(dd+1)+' hinzufügen<input type="file" id="diary-file-'+i+'-'+did+'" accept="image/*" multiple style="display:none" onchange="diaryAddPhotos('+i+',this.files,\''+did+'\')"></div>';
+      h+='<div class="diary-gallery" id="diary-photos-'+i+'-'+did+'"></div>';
+      h+='</div>';
+    }
+    h+='<button class="diary-day-add" onclick="addDiaryDay('+i+')">➕ Weiteren Tag hinzufügen</button>';
+    h+='<div style="font-size:11px;color:var(--text-secondary);text-align:center;margin-top:6px">📍 Enthält ein Foto GPS-Daten, wird der Ort erkannt – tippe auf den Ort unter dem Bild, um ihn auf Google Maps zu öffnen</div>';
+    h+='</div>';
+
+    // Next stop
+    if(stop.nextTo){
+      h+='<div style="background:var(--bg);padding:12px;margin-top:14px;border-radius:10px;font-size:13px">⏭️ <strong>Nächste Etappe — '+stop.nextTo+':</strong> '+stop.nextDistance+' km · '+stop.nextTime+'</div>';
+    }
+
+    // eigenen Zwischenstopp löschen
+    if(isCustom){
+      h+='<button class="markdone" style="background:#dc2626;color:#fff;margin-bottom:8px" onclick="deleteStop('+i+')">🗑️ Diesen Zwischenstopp löschen</button>';
+    }
+
+    // Mark done
+    h+='<button class="markdone '+(doneStations[i]?'isdone':'todo')+'" onclick="markDone('+i+')">'+(doneStations[i]?'✓ Als erledigt markiert (rückgängig)':'Station als erledigt markieren')+'</button>';
+
+    // Nav (nach effektiver Reihenfolge)
+    h+='<div class="nav-buttons">';
+    if(_r>0) h+='<button onclick="go('+ROUTE[_r-1].key+')">← '+ROUTE[_r-1].stop.city+'</button>';
+    if(_r<ROUTE.length-1) h+='<button onclick="go('+ROUTE[_r+1].key+')">'+ROUTE[_r+1].stop.city+' →</button>';
+    h+='</div>';
+
+    h+='</div>';
+    card.innerHTML=h;
+    main.appendChild(card);
+  }
+  // Geräte-Medien (Fotos + lokale Dokumente aus IndexedDB) nach dem Neu-Rendern wieder einfüllen
+  if(mediaDB){ setTimeout(function(){ loadAllDiaryPhotos(); loadAllLocalDocs(); }, 0); }
+}
+
+// Distanz-Text vom Vorgängerort
+function prevDistanceText(idx){
+  if(idx===0) return 'Start der Reise';
+  var prev=STOPS[idx-1];
+  if(prev.nextDistance) return prev.nextDistance+' km · '+prev.nextTime;
+  return '';
+}
+
+// ===== TAGEBUCH (mehrere Tage pro Station) =====
+function saveDiaryDay(idx, dayId){
+  var days=ensureDays(idx);
+  for(var k=0;k<days.length;k++){ if(days[k].id===dayId){
+    var ta=document.getElementById('diary-'+idx+'-'+dayId);
+    if(ta) days[k].text=ta.value;
+    break;
+  }}
+  saveDiaryDays();
+  var st=document.getElementById('diary-saved-'+idx+'-'+dayId);
+  if(st){ st.textContent='✓ Gespeichert'; setTimeout(function(){ st.textContent=''; },1500); }
+}
+function addDiaryDay(idx){
+  var days=ensureDays(idx);
+  days.push({id:newDayId(), text:''});
+  saveDiaryDays();
+  renderStations(); go(idx);
+}
+function deleteDiaryDay(idx, dayId){
+  var days=ensureDays(idx);
+  if(days.length<=1) return;
+  if(!confirm('Diesen Tag inkl. seiner Fotos löschen?')) return;
+  diaryDays[idx]=days.filter(function(d){ return d.id!==dayId; });
+  saveDiaryDays();
+  // zugehörige Fotos aus IndexedDB entfernen
+  if(mediaDB){ try{
+    var tx=mediaDB.transaction('photos','readwrite');
+    var store=tx.objectStore('photos');
+    var req=store.index('station').getAll(idx);
+    req.onsuccess=function(){
+      var items=req.result||[];
+      for(var n=0;n<items.length;n++){ if(items[n].day===dayId) store.delete(items[n].id); }
+    };
+    tx.oncomplete=function(){ renderStations(); go(idx); };
+  }catch(e){ renderStations(); go(idx); } }
+  else { renderStations(); go(idx); }
+}
+// Fotospeicher (IndexedDB – großer Speicher, bleibt auf dem Gerät)
+var mediaDB=null;
+function openMediaDB(cb){
+  try{
+    var req=indexedDB.open('nz_media',2);
+    req.onupgradeneeded=function(e){
+      var db=e.target.result;
+      if(!db.objectStoreNames.contains('photos')){
+        var storeObj=db.createObjectStore('photos',{keyPath:'id',autoIncrement:true});
+        storeObj.createIndex('station','station',{unique:false});
+      }
+      if(!db.objectStoreNames.contains('localdocs')){
+        var docStore=db.createObjectStore('localdocs',{keyPath:'id',autoIncrement:true});
+        docStore.createIndex('station','station',{unique:false});
+      }
+    };
+    req.onsuccess=function(e){ mediaDB=e.target.result; if(cb)cb(); };
+    req.onerror=function(){ if(cb)cb(); };
+  }catch(e){ if(cb)cb(); }
+}
+// Bild vor dem Speichern verkleinern (max 1600px, JPEG) – spart massiv Platz
+function compressImage(file, cb){
+  var reader=new FileReader();
+  reader.onload=function(ev){
+    var img=new Image();
+    img.onload=function(){
+      var max=1600, w=img.width, h=img.height;
+      if(w>max||h>max){ if(w>h){ h=Math.round(h*max/w); w=max; } else { w=Math.round(w*max/h); h=max; } }
+      var c=document.createElement('canvas'); c.width=w; c.height=h;
+      c.getContext('2d').drawImage(img,0,0,w,h);
+      try{ cb(c.toDataURL('image/jpeg',0.75)); }catch(err){ cb(ev.target.result); }
+    };
+    img.onerror=function(){ cb(ev.target.result); };
+    img.src=ev.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+// ===== STANDORT-ERKENNUNG (EXIF-GPS aus Foto + Ortsname) =====
+// Kurze Info-Einblendung unten am Bildschirm
+function showToast(msg){
+  try{
+    var t=document.getElementById('appToast');
+    if(!t){ t=document.createElement('div'); t.id='appToast'; t.className='toast'; document.body.appendChild(t); }
+    t.textContent=msg;
+    t.classList.add('show');
+    clearTimeout(t._h);
+    t._h=setTimeout(function(){ t.classList.remove('show'); }, 3500);
+  }catch(e){}
+}
+// GPS-Koordinaten aus den EXIF-Daten eines Fotos lesen (ohne externe Bibliothek)
+function getExifGps(file, cb){
+  try{
+    if(!file || (file.type||'').indexOf('image')===-1){ cb(null); return; }
+    var reader=new FileReader();
+    reader.onload=function(e){
+      try{
+        var view=new DataView(e.target.result);
+        if(view.getUint16(0,false)!==0xFFD8){ cb(null); return; } // kein JPEG
+        var len=view.byteLength, offset=2, tiff=0;
+        while(offset<len-1){
+          if(view.getUint8(offset)!==0xFF){ cb(null); return; }
+          var marker=view.getUint16(offset,false);
+          if(marker===0xFFE1){ // APP1 = EXIF
+            var es=offset+4;
+            if(view.getUint32(es,false)!==0x45786966){ cb(null); return; } // "Exif"
+            tiff=es+6; break;
+          }
+          offset += 2 + view.getUint16(offset+2,false);
+        }
+        if(!tiff){ cb(null); return; }
+        var little=view.getUint16(tiff,false)===0x4949;
+        function u16(o){ return view.getUint16(o,little); }
+        function u32(o){ return view.getUint32(o,little); }
+        var ifd0=tiff+u32(tiff+4), n=u16(ifd0), gps=0, i, ent;
+        for(i=0;i<n;i++){ ent=ifd0+2+i*12; if(u16(ent)===0x8825){ gps=tiff+u32(ent+8); break; } }
+        if(!gps){ cb(null); return; }
+        var gn=u16(gps), latR='N', lonR='E', lat=null, lon=null;
+        function rat3(o){ var vo=tiff+u32(o+8), a=[], k; for(k=0;k<3;k++){ var num=view.getUint32(vo+k*8,little), den=view.getUint32(vo+k*8+4,little); a.push(den?num/den:0); } return a; }
+        for(i=0;i<gn;i++){ ent=gps+2+i*12; var tag=u16(ent);
+          if(tag===0x0001) latR=String.fromCharCode(view.getUint8(ent+8));
+          else if(tag===0x0003) lonR=String.fromCharCode(view.getUint8(ent+8));
+          else if(tag===0x0002) lat=rat3(ent);
+          else if(tag===0x0004) lon=rat3(ent);
+        }
+        if(!lat||!lon){ cb(null); return; }
+        var la=lat[0]+lat[1]/60+lat[2]/3600; if(latR==='S') la=-la;
+        var lo=lon[0]+lon[1]/60+lon[2]/3600; if(lonR==='W') lo=-lo;
+        if(!isFinite(la)||!isFinite(lo)||(la===0&&lo===0)){ cb(null); return; }
+        cb({lat:la, lon:lo});
+      }catch(err){ cb(null); }
+    };
+    reader.onerror=function(){ cb(null); };
+    reader.readAsArrayBuffer(file.slice(0, 131072)); // EXIF liegt am Dateianfang (max ~64 KB)
+  }catch(e){ cb(null); }
+}
+// Koordinaten -> Ortsname (OpenStreetMap/Nominatim; braucht Internet)
+function reverseGeocode(lat, lon, cb){
+  try{
+    var xhr=new XMLHttpRequest();
+    xhr.open('GET','https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=14&accept-language=de&lat='+lat+'&lon='+lon,true);
+    xhr.timeout=9000;
+    xhr.onload=function(){
+      try{
+        var d=JSON.parse(xhr.responseText), a=d.address||{};
+        var name=a.tourism||a.attraction||a.natural||a.peak||a.water||a.village||a.town||a.city||a.suburb||a.municipality||a.county||(d.name||'');
+        var region=a.state||a.region||a.country||'';
+        var label=name||'';
+        if(region && region!==name) label += (label?', ':'')+region;
+        cb(label||null);
+      }catch(e){ cb(null); }
+    };
+    xhr.onerror=function(){ cb(null); };
+    xhr.ontimeout=function(){ cb(null); };
+    xhr.send();
+  }catch(e){ cb(null); }
+}
+
+function diaryAddPhotos(idx, files, dayId){
+  if(!mediaDB){ alert('Fotospeicher wird noch geladen – bitte kurz warten und erneut versuchen.'); return; }
+  var dz=ensureDays(idx); if(!dayId){ dayId=dz[0].id; } saveDiaryDays();   // Fallback: erster Tag; Tage sichern
+  var arr=Array.prototype.slice.call(files), done=0, total=arr.length;
+  if(total===0) return;
+  arr.forEach(function(file){
+    if(!file.type || file.type.indexOf('image')===-1){ done++; if(done===total) loadDiaryPhotos(idx); return; }
+    var dataUrl=null, gps=null, place=null, ready=0;
+    function finish(){
+      ready++;
+      if(ready<2) return; // erst speichern, wenn Bild komprimiert UND Standort geprüft
+      try{
+        var rec={station:idx,day:dayId,name:file.name,ts:Date.now(),data:dataUrl};
+        if(gps){ rec.lat=gps.lat; rec.lon=gps.lon; }
+        if(place) rec.place=place;
+        var tx=mediaDB.transaction('photos','readwrite');
+        tx.objectStore('photos').add(rec);
+        tx.oncomplete=function(){ if(place) showToast('📍 Standort erkannt: '+place); done++; if(done===total) loadDiaryPhotos(idx); };
+        tx.onerror=function(){ done++; if(done===total) loadDiaryPhotos(idx); };
+      }catch(e){ done++; if(done===total) loadDiaryPhotos(idx); }
+    }
+    compressImage(file, function(u){ dataUrl=u; finish(); });
+    getExifGps(file, function(g){
+      if(g){ gps=g; reverseGeocode(g.lat, g.lon, function(nm){ place=nm; finish(); }); }
+      else { finish(); }
+    });
+  });
+}
+// HTML für die Foto-Thumbnails eines Tages
+function diaryThumbsHtml(items, idx){
+  var html='';
+  for(var k=0;k<items.length;k++){
+    var lat=items[k].lat, lon=items[k].lon, hasGeo=(lat!=null && lon!=null);
+    var cap='';
+    if(items[k].place) cap='📍 '+items[k].place;
+    else if(hasGeo) cap='📍 '+Number(lat).toFixed(3)+', '+Number(lon).toFixed(3);
+    var capHtml='';
+    if(hasGeo){
+      var q=Number(lat)+','+Number(lon);
+      var t=(cap+' – auf Google Maps ansehen').replace(/"/g,'&quot;');
+      capHtml='<a class="diary-cap" href="https://www.google.com/maps/search/?api=1&query='+q+'" target="_blank" rel="noopener" title="'+t+'" onclick="event.stopPropagation()">'+cap+' 🗺️›</a>';
+    } else if(cap){
+      capHtml='<div class="diary-cap" title="'+cap.replace(/"/g,'&quot;')+'">'+cap+'</div>';
+    }
+    html+='<div class="diary-thumb"><img src="'+items[k].data+'" onclick="viewDiaryPhoto('+items[k].id+')"><button class="diary-del" onclick="deleteDiaryPhoto('+items[k].id+','+idx+')">🗑️</button>'+capHtml+'</div>';
+  }
+  return html;
+}
+function loadDiaryPhotos(idx){
+  if(!mediaDB) return;
+  var days=(diaryDays[idx]&&diaryDays[idx].length)?diaryDays[idx]:null;
+  var firstDayId=days?days[0].id:null;
+  var validIds={}; if(days){ for(var v=0;v<days.length;v++) validIds[days[v].id]=true; }
+  try{
+    var tx=mediaDB.transaction('photos','readonly');
+    var req=tx.objectStore('photos').index('station').getAll(idx);
+    req.onsuccess=function(){
+      var items=req.result||[], byDay={};
+      for(var k=0;k<items.length;k++){
+        var dId=items[k].day;
+        if(!dId || !validIds[dId]) dId=firstDayId;   // Legacy-/verwaiste Fotos -> erster Tag
+        if(!byDay[dId]) byDay[dId]=[];
+        byDay[dId].push(items[k]);
+      }
+      if(days){
+        for(var di=0;di<days.length;di++){
+          var cont=document.getElementById('diary-photos-'+idx+'-'+days[di].id);
+          if(cont) cont.innerHTML=diaryThumbsHtml(byDay[days[di].id]||[], idx);
+        }
+      }
+    };
+  }catch(e){}
+}
+function viewDiaryPhoto(id){
+  if(!mediaDB) return;
+  var tx=mediaDB.transaction('photos','readonly');
+  var req=tx.objectStore('photos').get(id);
+  req.onsuccess=function(){
+    var rec=req.result; if(!rec) return;
+    showInViewer({name:rec.name||'Foto',type:'image/jpeg',data:rec.data});
+    var del=document.getElementById('docDelete');
+    if(del){
+      del.style.display='';
+      del.onclick=function(){
+        if(!confirm('Dieses Foto wirklich löschen?')) return;
+        var t2=mediaDB.transaction('photos','readwrite');
+        t2.objectStore('photos').delete(id);
+        t2.oncomplete=function(){ closeModal('docModal'); loadDiaryPhotos(rec.station); };
+      };
+    }
+  };
+}
+function deleteDiaryPhoto(id, idx){
+  if(!mediaDB) return;
+  if(!confirm('Dieses Foto löschen?')) return;
+  var tx=mediaDB.transaction('photos','readwrite');
+  tx.objectStore('photos').delete(id);
+  tx.oncomplete=function(){ loadDiaryPhotos(idx); };
+}
+function loadAllDiaryPhotos(){ for(var r=0;r<ROUTE.length;r++) loadDiaryPhotos(ROUTE[r].key); }
+
+// ===== LOKALE DOKUMENTE (nur auf diesem Gerät, IndexedDB) =====
+function loadLocalDocs(idx){
+  var cont=document.getElementById('mydocs-'+idx);
+  if(!cont||!mediaDB) return;
+  try{
+    var tx=mediaDB.transaction('localdocs','readonly');
+    var req=tx.objectStore('localdocs').index('station').getAll(idx);
+    req.onsuccess=function(){
+      var items=req.result||[], html='';
+      for(var k=0;k<items.length;k++){
+        var it=items[k];
+        html+='<div class="doc-item"><span style="font-size:22px">'+(it.icon||'📄')+'</span><div class="doc-meta"><div class="doc-name">'+it.name+'</div><div class="doc-sub"><span class="doc-cat" style="background:'+(it.color||'#64748b')+'">'+(it.cat||'Dokument')+'</span> '+(it.size||'')+' <span style="background:#0ea5e9;color:#fff;font-size:11px;padding:2px 8px;border-radius:12px">🔒 nur auf diesem Gerät</span></div>';
+        html+='<select class="doc-move" onchange="moveLocalDoc('+it.id+',this.value)">';
+        for(var so=0;so<ROUTE.length;so++){ var ok=ROUTE[so].key; html+='<option value="'+ok+'"'+(ok===idx?' selected':'')+'>'+ROUTE[so].stop.icon+' '+ROUTE[so].stop.city+'</option>'; }
+        html+='</select></div>';
+        html+='<button class="icon-btn" onclick="viewLocalDoc('+it.id+')" title="Öffnen">👁️</button><button class="icon-btn" onclick="deleteLocalDoc('+it.id+','+idx+')" title="Löschen">🗑️</button></div>';
+      }
+      cont.innerHTML=html;
+    };
+  }catch(e){}
+}
+function loadAllLocalDocs(){ for(var r=0;r<ROUTE.length;r++) loadLocalDocs(ROUTE[r].key); }
+function viewLocalDoc(id){
+  if(!mediaDB) return;
+  var tx=mediaDB.transaction('localdocs','readonly');
+  var req=tx.objectStore('localdocs').get(id);
+  req.onsuccess=function(){ if(req.result) showInViewer(req.result); };
+}
+function deleteLocalDoc(id, idx){
+  if(!mediaDB) return;
+  if(!confirm('Dieses Dokument von diesem Gerät löschen?')) return;
+  var tx=mediaDB.transaction('localdocs','readwrite');
+  tx.objectStore('localdocs').delete(id);
+  tx.oncomplete=function(){ loadLocalDocs(idx); };
+}
+function moveLocalDoc(id, toIdx){
+  if(!mediaDB) return;
+  toIdx=parseInt(toIdx,10);
+  var tx=mediaDB.transaction('localdocs','readwrite');
+  var store=tx.objectStore('localdocs');
+  var req=store.get(id);
+  req.onsuccess=function(){
+    var rec=req.result; if(!rec) return;
+    var from=rec.station; rec.station=toIdx; store.put(rec);
+    tx.oncomplete=function(){ renderStations(); go(toIdx); };
+  };
+}
+
+// ===== INIT =====
+function initApp(){
+  if(typeof pdfjsLib!=='undefined' && pdfjsLib.GlobalWorkerOptions){ pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'; }
+  refreshRoute();
+  // Tagebuch-Tage einmalig sichern, damit Tag-Kennungen über Sitzungen stabil bleiben
+  for(var _m=0;_m<ROUTE.length;_m++) ensureDays(ROUTE[_m].key);
+  saveDiaryDays();
+  if(darkMode){ document.body.classList.add('dark-mode'); document.getElementById('darkBtn').textContent='☀️'; }
+  renderCountdown();
+  updateHomeClock();
+  setInterval(updateHomeClock, 30000);
+  renderStats();
+  renderQuickBar();
+  renderStations();
+  go(0);
+  loadRate();
+  openMediaDB(function(){ loadAllDiaryPhotos(); loadAllLocalDocs(); });
+}
+
+window.addEventListener('load',function(){
+  if(sessionStorage.getItem('nz_loggedIn')==='true'){ initApp(); }
+});
+</script>
+</body>
+</html>
