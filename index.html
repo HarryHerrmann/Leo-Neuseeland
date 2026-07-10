@@ -110,6 +110,9 @@
     .diary-day-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
     .diary-day-title { font-weight: 700; font-size: 15px; }
     .diary-day-del { background: transparent; color: #dc2626; border: 1px solid #dc2626; border-radius: 6px; font-size: 12px; padding: 4px 8px; cursor: pointer; }
+    .diary-day-date { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; font-size: 13px; color: var(--text-secondary); }
+    .diary-day-date input[type=date] { padding: 7px 9px; border: 1px solid var(--border); border-radius: 8px; background: var(--card-bg); color: var(--text); font-size: 14px; font-family: inherit; }
+    .diary-day-datetxt { font-weight: 700; color: var(--accent); }
     .diary-day-add { width: 100%; margin-top: 2px; padding: 11px; border: 1.5px dashed var(--accent); background: transparent; color: var(--accent); border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; }
     .diary-day-add:hover { background: rgba(59,130,246,.08); }
     /* TOAST */
@@ -1101,6 +1104,7 @@ function renderStations(){
       h+='<div class="diary-day-head"><span class="diary-day-title">📅 Tag '+(dd+1)+'</span>';
       if(days.length>1) h+='<button class="diary-day-del" onclick="deleteDiaryDay('+i+',\''+did+'\')">🗑️ Tag löschen</button>';
       h+='</div>';
+      h+='<div class="diary-day-date">🗓️ <input type="date" value="'+(day.date||'')+'" onchange="setDiaryDayDate('+i+',\''+did+'\',this.value)"><span class="diary-day-datetxt" id="diary-daydate-'+i+'-'+did+'">'+(day.date?fmtDate(day.date):'')+'</span></div>';
       h+='<textarea class="notes" id="diary-'+i+'-'+did+'" placeholder="Was hast du an Tag '+(dd+1)+' in '+stop.city+' erlebt?" oninput="saveDiaryDay('+i+',\''+did+'\')">'+(day.text||'')+'</textarea>';
       h+='<div class="notes-saved" id="diary-saved-'+i+'-'+did+'"></div>';
       h+='<div class="diary-upload" onclick="document.getElementById(\'diary-file-'+i+'-'+did+'\').click()">📷 Fotos zu Tag '+(dd+1)+' hinzufügen<input type="file" id="diary-file-'+i+'-'+did+'" accept="image/*" multiple style="display:none" onchange="diaryAddPhotos('+i+',this.files,\''+did+'\')"></div>';
@@ -1158,9 +1162,28 @@ function saveDiaryDay(idx, dayId){
   var st=document.getElementById('diary-saved-'+idx+'-'+dayId);
   if(st){ st.textContent='✓ Gespeichert'; setTimeout(function(){ st.textContent=''; },1500); }
 }
+// ISO-Datum (JJJJ-MM-TT) hübsch formatieren: "Do, 25.09.2026"
+function fmtDate(iso){
+  if(!iso) return '';
+  try{
+    var d=new Date(iso+'T12:00:00'); if(isNaN(d.getTime())) return '';
+    var wd=['So','Mo','Di','Mi','Do','Fr','Sa'][d.getDay()];
+    var dd=('0'+d.getDate()).slice(-2), mm=('0'+(d.getMonth()+1)).slice(-2);
+    return wd+', '+dd+'.'+mm+'.'+d.getFullYear();
+  }catch(e){ return ''; }
+}
+function setDiaryDayDate(idx, dayId, value){
+  var days=ensureDays(idx);
+  for(var k=0;k<days.length;k++){ if(days[k].id===dayId){ days[k].date=value; break; } }
+  saveDiaryDays();
+  var el=document.getElementById('diary-daydate-'+idx+'-'+dayId);
+  if(el) el.textContent=value?fmtDate(value):'';
+}
 function addDiaryDay(idx){
   var days=ensureDays(idx);
-  days.push({id:newDayId(), text:''});
+  var def='', last=days[days.length-1];
+  if(last && last.date){ var d=new Date(last.date+'T12:00:00'); if(!isNaN(d.getTime())){ d.setDate(d.getDate()+1); def=d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2); } }
+  days.push({id:newDayId(), text:'', date:def});
   saveDiaryDays();
   renderStations(); go(idx);
 }
